@@ -5,12 +5,19 @@ title: "What makes a beer controversial ?"
 
 <h1 class="about-title">What makes a beer controversial ?</h1>
 
-<div class="data-story-content">
-      
-  <p>Here is an interactive plot:</p>
-  {% include plot.html %}
+<div class="plot-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+    </p>Here is </p>
+    <!-- First Plot -->
+    <div class="plot-item" style="flex: 1 1 calc(50% - 20px); max-width: 50%; box-sizing: border-box;">
+        {% include_relative assets/plots/plot.html %}
+    </div>
 
-  <p>Here is another interactive plot:</p>
-  {% include plot.html %}
-
+    </p>Here is </p>
+    <!-- Second Plot -->
+    <div class="plot-item" style="flex: 1 1 calc(50% - 20px); max-width: 50%; box-sizing: border-box;">
+        {% include_relative assets/plots/plot.html %}
+    </div>
 </div>
+
+
+## Title

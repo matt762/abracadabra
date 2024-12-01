@@ -244,3 +244,20 @@ footer {
     color: #404d5a;
     padding-bottom: 4rem; /* Adjust the padding value as needed */
 }
+
+.data-story-content {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.data-story-content iframe,
+.data-story-content .plotly-graph-div {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.plot-container {
+  text-align: center; /* Center-align plots within their containers */
+  margin-bottom: 20px; /* Space between plots */
+}
