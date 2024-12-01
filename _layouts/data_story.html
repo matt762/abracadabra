@@ -22,12 +22,17 @@
 
     <footer>
         <div class="footer-content">
-            <p class="climate-crisis">&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
-            <p class="roboto">
-                <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra" target="_blank">GitHub Repo</a> |
-                <a href="https://github.com/matt762/abracadabra/tree/main" target="_blank">Website Repogithub</a> |
-                <a href="https://epfl-ada.github.io/teaching/fall2024/cs401/" target="_blank">Course Website</a>
-            </p>
+            <div class="footer-description">
+                <p class="climate-crisis">&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
+                <p class="roboto">{{ site.description }}</p>
+            </div>
+            <div class="footer-links">
+                <p class="roboto">
+                    <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra" target="_blank">GitHub Repo</a><br>
+                    <a href="https://github.com/matt762/abracadabra/tree/main" target="_blank">Website Repo</a><br>
+                    <a href="https://epfl-ada.github.io/teaching/fall2024/cs401/" target="_blank">Course Website</a>
+                </p>
+            </div>
         </div>
     </footer>
 </body>

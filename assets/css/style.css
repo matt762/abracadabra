@@ -6,6 +6,13 @@
 }
 
 @font-face {
+    font-family: 'AlfSlabOne';
+    src: url('../fonts/AlfaSlabOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Roboto';
     src: url('../fonts/Roboto-Thin.ttf') format('truetype');
     font-weight: 100;
@@ -94,10 +101,11 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 header {
-    background: #435a72;
+    background: #404d5a;
     color: white;
     padding: 1rem;
     font-family: 'Climate_crisis', Arial, sans-serif;
@@ -107,6 +115,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
+    box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
 .header-content {
@@ -114,12 +123,14 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
 .site-title {
     color: white;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     padding-right: 2rem;
 }
@@ -133,7 +144,7 @@ header {
     color: white;
     text-decoration: none;
     margin-left: 1rem;
-    font-size: 1rem;
+    font-size: 0.875rem; /* Lower the font size for the About link */
     padding-right: 5rem;
 }
 
@@ -142,27 +153,45 @@ header {
 }
 
 main {
-    max-width: 800px;
+    max-width: 950px;
     margin: 8rem auto 2rem auto;
     padding: 0 1rem;
+    box-sizing: border-box;
+    font-size: 18px;
 }
 
 footer {
     background: white;
-    color: #435a72;
+    color: #404d5a;
     padding: 1rem;
-    text-align: left;
     font-size: 16px;
     line-height: 1.6;
     bottom: 0;
     width: 100%;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
 }
 
 .footer-content {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-description {
+    text-align: left;
+    max-width: 250px;
+}
+
+.footer-links {
+    display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: flex-start;
+    padding: 0 2rem;
 }
 
 .footer-content p {
@@ -170,9 +199,9 @@ footer {
 }
 
 .footer-content a {
-    color: #435a72;
+    color: #404d5a;
     text-decoration: none;
-    margin: 0 0.5rem;
+    margin: 0.5rem 0rem; /* Add margin between links */
     font-weight: bold;
 }
 
@@ -193,13 +222,25 @@ footer {
 }
 
 .team-member h2 {
-    font-family: 'Climate_crisis', Arial, sans-serif;
+    font-family: 'AlfSlabOne', Arial, sans-serif;
     font-size: 1.5rem;
-    color: #2c3e50;
+    color: black;
 }
 
 .team-member p {
     font-family: 'Roboto', Arial, sans-serif;
     font-size: 1rem;
-    color: #435a72;
+    color: black;
+}
+
+.about-title {
+    font-family: 'Climate_crisis', Arial, sans-serif;
+    color: #404d5a;
+    padding-bottom: 4rem; /* Adjust the padding value as needed */
+}
+
+.index-title {
+    font-family: 'Climate_crisis', Arial, sans-serif;
+    color: #404d5a;
+    padding-bottom: 4rem; /* Adjust the padding value as needed */
 }
