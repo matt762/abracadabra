@@ -1,0 +1,1 @@
+This is the website for the project of the course ADA 2024, at EPFL, for the group abracADAbra.
