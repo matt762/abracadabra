@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="{{ site.baseurl }}/" class="site-title">{{ site.title }}</a>
+            <nav class="nav-links">
+                <a href="{{ site.baseurl }}/about" class="nav-link">About us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p class="climate-crisis">&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
+            <p class="roboto">
+                <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra" target="_blank">GitHub Repo</a> |
+                <a href="https://github.com/matt762/abracadabra/tree/main" target="_blank">Website Repogithub</a> |
+                <a href="https://epfl-ada.github.io/teaching/fall2024/cs401/" target="_blank">Course Website</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

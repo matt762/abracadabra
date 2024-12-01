@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: data_story
 title: "My Data Story"
 ---
 
