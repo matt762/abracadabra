@@ -1,23 +1,25 @@
 ---
 layout: data_story
-title: "What makes a beer controversial ?"
+title: "What makes a beer controversial?"
 ---
 
-<h1 class="about-title">What makes a beer controversial ?</h1>
+<h1 class="about-title">What makes a beer controversial?</h1>
 
 <div class="plot-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-    </p>Here is </p>
+
     <!-- First Plot -->
     <div class="plot-item" style="flex: 1 1 calc(50% - 20px); max-width: 50%; box-sizing: border-box;">
-        {% include_relative assets/plots/plot.html %}
+        {% include_relative assets/plots/plot1.html %}
     </div>
 
-    </p>Here is </p>
+    <!-- Text Between Plots -->
+    <div style="width: 100%; text-align: left;">
+        <p>This is some text between the two plots to test the layout.</p>
+    </div>
+
     <!-- Second Plot -->
     <div class="plot-item" style="flex: 1 1 calc(50% - 20px); max-width: 50%; box-sizing: border-box;">
-        {% include_relative assets/plots/plot.html %}
+        {% include_relative assets/plots/plot2.html %}
     </div>
+
 </div>
-
-
-## Title
