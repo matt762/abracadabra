@@ -5,21 +5,44 @@ title: "What makes a beer controversial?"
 
 <h1 class="about-title">What makes a beer controversial?</h1>
 
-<div class="plot-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+This section is designed to identify and categorize beers as either controversial or universally accepted. 
+We analyze various factors that contribute to a beer's controversiality.<br>
+
+<br>
+
+<b>Definition of controversial</b>: "subject of intense public argument, disagreement, or disapproval" <sup>
+    [
+    <a href="https://www.collinsdictionary.com/dictionary/english/controversial" target="_blank">1</a>
+    ]
+    </sup>.<br>
+<br>
+
+This is based on public opinion, and thus, our analysis relies on user-provided data, 
+including ratings for appearance, aroma, palate, taste, overall impression, and textual reviews.
+
+Controversiality can be analyzed in different manners. For now, the three following definitions are studied:
+
+<ul>
+    <li>We compute the variance of each attribute (appearance, aroma, palate, taste) for each beer, then study which attribute seems to be the most controversial by looking at the distribution of the variances.</li>
+    <li>Knowing <b>overall</b> is the global grade given by the user, we use it to classify the beers. We compute the variance across the <b>overall</b> rating. We then classify beers as controversial/universal according to a certain threshold. Then, we observe which of the four attributes influences the most the overall score controversiality by looking at the distribution of the variances in each class.</li>
+    <li>We define for each beer which attribute is the most and least controversial by looking at its variance. Then we count the number of max/min variances for all attributes. This can also be done after classification with the <b>overall</b> score.</li>
+</ul>
+
+<div class="plot-container">
 
     <!-- First Plot -->
-    <div class="plot-item" style="flex: 1 1 calc(50% - 20px); max-width: 50%; box-sizing: border-box;">
-        {% include_relative assets/plots/plot1.html %}
+    <div class="plot-item">
+        {% include_relative assets/plots/variance_distribution_beer_advocate_matplotlib.html %}
     </div>
 
-    <!-- Text Between Plots -->
-    <div style="width: 100%; text-align: left;">
-        <p>This is some text between the two plots to test the layout.</p>
+    <!-- Text Below the Plots -->
+    <div class="plot-text">
+        <p>This is some text below the two plots to test the layout.</p>
     </div>
 
     <!-- Second Plot -->
-    <div class="plot-item" style="flex: 1 1 calc(50% - 20px); max-width: 50%; box-sizing: border-box;">
-        {% include_relative assets/plots/plot2.html %}
+    <div class="plot-item">
+        {% include_relative assets/plots/variance_distribution_rate_beer_matplotlib.html %}
     </div>
 
 </div>

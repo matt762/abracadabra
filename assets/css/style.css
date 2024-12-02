@@ -257,7 +257,34 @@ footer {
     text-align: center;
 }
 
+/* Plot Container */
 .plot-container {
-  text-align: center; /* Center-align plots within their containers */
-  margin-bottom: 20px; /* Space between plots */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    /* Remove height constraint */
+    /* height: auto; */
+}
+
+/* Plot Items */
+.plot-item {
+    flex: 1 1 45%;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Ensure Plots Do Not Exceed Container Width */
+.plot-item img,
+.plot-item svg,
+.plot-item div {
+    max-width: 100%;
+}
+
+/* Text Below Plots */
+.plot-text {
+    width: 100%;
+    text-align: left;
+    margin-top: 20px;
 }
