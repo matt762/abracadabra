@@ -8604,16 +8604,16 @@ input, select, textarea {
 
 			.iframe-container {
 				display: flex;
-				justify-content: center;
+				justify-content: right;
 				align-items: center;
-				width: 15in;
-				max-width: 15in;
-				margin: 0 15%;
+				width: 100%;
+				max-width: 1200px;
+				margin: 0 auto;
 			}
 	
 			.responsive-iframe {
 				width: 100%;
-				height: 600px; /* Adjust height as needed */
+				height: 800px; /* Adjust height as needed */
 				border: none;
 			}
 			
