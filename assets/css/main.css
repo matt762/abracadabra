@@ -7221,7 +7221,8 @@ input, select, textarea {
 	}
 
 		.wrapper.style1 > .inner.big {
-			width: 100rem;
+			width: 60rem;
+			text-align: center;
 		}
 
 		.wrapper.style1 > .inner.medium {
