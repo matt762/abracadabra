@@ -7220,6 +7220,10 @@ input, select, textarea {
 		width: 42rem;
 	}
 
+		.wrapper.style1 > .inner.big {
+			width: 100rem;
+		}
+
 		.wrapper.style1 > .inner.medium {
 			width: 36rem;
 		}
