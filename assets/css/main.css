@@ -8611,7 +8611,7 @@ input, select, textarea {
 			.iframe-container {
 				position: relative;
 				width: 100%;
-				height: 0;
+				height: auto;
 				padding-bottom: 100%; /* Increased aspect ratio */
 			}
 
