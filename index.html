@@ -139,6 +139,9 @@
 								<li>with \(\text{min}\) is the lowest grade one can give to a given attribute.</li>
 							</ul>
 						</p>
+						<p>
+							A problem is still remaining, the grades do not have the same resolution at all. This will be seen further in the analysis.
+						</p>
 					</div>
 				</section>
 
@@ -147,21 +150,31 @@
 						<header>
 							<h2>Exploring the definition of controversiality</h2>
 						</header>
+
+						<p>
+							To find controversiality in our dataset, we first need to understand what it is and how we may look for it in all that data. Here is global definition to begin with:
+						</p>
 						<dl>
-							<dt>Definition of controversial</dt>
+							<dt>Controversial:</dt>
 							<dd>
 								<p>"subject of intense public argument, disagreement, or disapproval" 
 								<sup>[<a href="https://www.collinsdictionary.com/dictionary/english/controversial" target="_blank" rel="noopener noreferrer">1</a>]</sup>
 								</p>
 							</dd>
 						</dl>
+						<p>
+							We can see that the definition is quite broad and can be applied to many different situations. 
+							In our case, we will focus on the beers that have the most polarized reviews, the one that may cause an argument, or a least a disagreament, if you would enter in a bar with a Shakespeare fan. 
+							As a result, this analysis only depends on the fields the users can fulfill, namely, the different ratings : appearance, aroma, palate, taste, overall, and the textual reviews
+							<br>
+							Our first analysis is based on the grades provided by the user. To do so, we will look at the variance. 
+							It measures the spread of the data around the mean, reflecting the level of disagreement among ratings. 
+							Furthermore, it is consistent across all attributes as it is dimension-independent, relying only on the grades given by the users.
+						</p>
+
 						---
 						<div class="iframe-container">
 							<iframe src="assets/plots/distri_beers.html" class="responsive-iframe"></iframe>
-						</div>
-						---
-						<div class="iframe-container">
-							<iframe src="assets/plots/aabv_plot.html" class="responsive-iframe"></iframe>
 						</div>
 						---
 					</div>
@@ -175,27 +188,27 @@
 								<section>
 									<span class="icon style2 major fa-user"></span>
 									<h3>Alan Wicht</h3>
-									<p>Alan is a member.</p>
+									<p>Alan is a data scientist.</p>
 								</section>
 								<section>
 									<span class="icon style2 major fa-user"></span>
 									<h3>Gustave Lapierre</h3>
-									<p>Gustave is a member.</p>
+									<p>Gustave is a data scientist.</p>
 								</section>
 								<section>
 									<span class="icon style2 major fa-user"></span>
 									<h3>Jehan Piaget</h3>
-									<p>Jehan is a member.</p>
+									<p>Jehan is a data scientist.</p>
 								</section>
 								<section>
 									<span class="icon style2 major fa-user"></span>
 									<h3>Mattéo Fiore</h3>
-									<p>Mattéo is a member.</p>
+									<p>Mattéo is a data scientist and webmaster.</p>
 								</section>
 								<section>
 									<span class="icon style2 major fa-user"></span>
 									<h3>Valentin Perret</h3>
-									<p>Valentin is a member.</p>
+									<p>Valentin is a data scientist.</p>
 								</section>
 							</div>
 						</div>

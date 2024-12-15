@@ -72,10 +72,6 @@ input, select, textarea {
 	appearance: none;
 }
 
-.inner {
-    cursor: url('images/icon.png'), auto;
-}
-
 /* Basic */
 
 	@-ms-viewport {
@@ -8628,5 +8624,4 @@ input, select, textarea {
 				border: none;
 			}
 
-			
-			
+/* Start https://www.cursors-4u.com */ * {cursor: url(https://cur.cursors-4u.net/food/foo-2/foo108.cur), auto !important;} /* End https://www.cursors-4u.com */
