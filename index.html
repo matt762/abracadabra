@@ -12,6 +12,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -71,9 +73,8 @@
 
 						<br>
 						<br>
-						<br>
 
-						<h1>Research questions</h1>
+						<h2>Research questions</h2>
 						<p>The following key questions define how this study is structured and what are the main topic that we will explore.</p>						
 						<ul class="default" style="margin-left: 50px;">
 							<li>How can we define controversiality and can we distinguish these two classes effectively?</li>
@@ -92,7 +93,7 @@
 				<section class="wrapper style1 align-left">
 					<div class="inner">
 						<header>
-							<h1>Data presentation</h1>
+							<h2>Data presentation</h2>
 						</header>
 
 						<p>
@@ -104,25 +105,47 @@
 							Now that the data is presented in a more manageable format and , we can begin examining its core content. We start by looking at the number of beers, reviews, breweries, and users in our dataset.
 						</p>
 						<div class="image" style="text-align: center;">
-							<h3 style="text-align: center;">Dataset Summary</h3>
+							<h3 style="text-align: center;"><strong>Dataset summary</strong></h3>
 							<img src="images/dataset_summary.png" style="max-width: 100%; height: auto;"/>
 						</div>
 						<p>
-							This dataset offers a rich source of information for our analysis. Fortunately, approximately <strong>90% of the beers have at least one review</strong>, ensuring that our findings will be both meaningful and insightful.
+							This dataset offers a rich source of information for our analysis. Fortunately, approximately <strong>90% of the beers have at least one review</strong>, ensuring that our findings will be both meaningful and insightful. 
+							For this project, we will focus only on these beers.
 						</p>
 						<p>
 							However, it’s important to note that our dataset is not fully representative. The majority of the reviews are from American, meaning our analysis largely reflects preferences and tastes specific to them. 
 							We chose not to rebalance the dataset, as doing so would have excluded a variety of brews and reviews, which are still relevant for our later analysis. 
 							The following plot presents the 20 countries with the most reviews in our dataset.
 						</p>
-						<div class="flourish-embed flourish-hierarchy" data-src="visualisation/20776364"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20776364/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
+						<div class="flourish-embed flourish-hierarchy" data-src="visualisation/20776364"><h3 style="text-align: center;"><strong>Top 20 countries by number of beer reviews</strong></h3><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20776364/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
+						<p>
+							The reviews on both websites are structured in the same way: users can rate the appearance, aroma, palate, and taste of each beer, in addition to providing an overall grade for each beer. 
+							However, we encounter our first issue here: the grading scales differ between the datasets, which complicates direct comparison. Let’s see how we address this!
+						</p>
+
+						<h4><strong>Grade distribution and transformation</strong></h4>
+
+						<p>
+							BeerAdvocate allow the user to rate the five attributes on a scale of 1 to 5 with a resolution of 0.25, while RateBeer allow the user to rate aroma and taste between 1 and 10, appearance palate between 1 and 5 and overall between 1 and 20, all with a resolution of 1.
+							<br>
+							To perform our analysis, we must transform the grades to have the same scale between the two dataset. We decided to set the grade between 1 and 5 as most attributes are graded with this range. This is done by converting RateBeer scales according to the following formula : 
+
+							\[
+							\frac{\text{grade} - \text{min}}{\text{max} - \text{min}} \cdot 4 + 1
+							\]
+						
+							<ul>
+								<li>with \(\text{max}\) is the largest grade one can give to a given attribute.</li>
+								<li>with \(\text{min}\) is the lowest grade one can give to a given attribute.</li>
+							</ul>
+						</p>
 					</div>
 				</section>
 
 				<section class="wrapper style1 align-left">
 					<div class="inner">
 						<header>
-							<h2>What is controversiality ?</h2>
+							<h2>Exploring the definition of controversiality</h2>
 						</header>
 						<dl>
 							<dt>Definition of controversial</dt>
