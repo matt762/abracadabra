@@ -92,38 +92,30 @@
 				<section class="wrapper style1 align-left">
 					<div class="inner">
 						<header>
-							<h1>Data preprocessing</h1>
+							<h1>Data presentation</h1>
 						</header>
 
-						<h4>The dataset</h4>
-						<div class="table-wrapper">
-							<table class="alt">
-								<thead>
-									<tr>
-										<th>Item</th>
-										<th>Number</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Beers</td>
-										<td>677,274</td>
-									</tr>
-									<tr>
-										<td>Reviews</td>
-										<td>15,516,838</td>
-									</tr>
-									<tr>
-										<td>Breweries</td>
-										<td>32,666</td>
-									</tr>
-									<tr>
-										<td>Users</td>
-										<td>220,537</td>
-									</tr>
-								</tbody>
-							</table>
+						<p>
+							To maintain consistency in our analysis, we format all data, including text, into CSV files. We then dive deeper into the data and uncover an interesting observation: breweries, beers, and even users appear in both RateBeer and BeerAdvocate. 
+							Additionally, there are cases where a brewery in one dataset corresponds to multiple entries in the other dataset. Since our goal is to determine whether a beer is more controversial or more universally accepted, we merged the two datasets into one. 
+							The result is a unified dataset for each feature, including beers, breweries, users, and reviews, with matching IDs across them. More details on how the datasets were merged can be found here.
+						</p>
+						<p>
+							Now that the data is presented in a more manageable format and , we can begin examining its core content. We start by looking at the number of beers, reviews, breweries, and users in our dataset.
+						</p>
+						<div class="image" style="text-align: center;">
+							<h3 style="text-align: center;">Dataset Summary</h3>
+							<img src="images/dataset_summary.png" style="max-width: 100%; height: auto;"/>
 						</div>
+						<p>
+							This dataset offers a rich source of information for our analysis. Fortunately, approximately <strong>90% of the beers have at least one review</strong>, ensuring that our findings will be both meaningful and insightful.
+						</p>
+						<p>
+							However, it’s important to note that our dataset is not fully representative. The majority of the reviews are from American, meaning our analysis largely reflects preferences and tastes specific to them. 
+							We chose not to rebalance the dataset, as doing so would have excluded a variety of brews and reviews, which are still relevant for our later analysis. 
+							The following plot presents the 20 countries with the most reviews in our dataset.
+						</p>
+						<div class="flourish-embed flourish-hierarchy" data-src="visualisation/20776364"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20776364/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
 					</div>
 				</section>
 
@@ -148,8 +140,6 @@
 						<div class="iframe-container">
 							<iframe src="assets/plots/aabv_plot.html" class="responsive-iframe"></iframe>
 						</div>
-						---
-						<div class="flourish-embed flourish-hierarchy" data-src="visualisation/20776364"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20776364/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
 						---
 					</div>
 				</section>

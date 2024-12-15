@@ -72,6 +72,10 @@ input, select, textarea {
 	appearance: none;
 }
 
+.inner {
+    cursor: url('images/icon.png'), auto;
+}
+
 /* Basic */
 
 	@-ms-viewport {
