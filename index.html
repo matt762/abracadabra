@@ -102,7 +102,7 @@
 							The result is a unified dataset for each feature, including beers, breweries, users, and reviews, with matching IDs across them. More details on how the datasets were merged can be found here.
 						</p>
 						<p>
-							Now that the data is presented in a more manageable format and , we can begin examining its core content. We start by looking at the number of beers, reviews, breweries, and users in our dataset.
+							Now that the data is presented in a more manageable format, we can begin examining its core content. We start by looking at the number of data.
 						</p>
 						<div class="image" style="text-align: center;">
 							<h3 style="text-align: center;"><strong>Dataset summary</strong></h3>
@@ -123,24 +123,9 @@
 							However, we encounter our first issue here: the grading scales differ between the datasets, which complicates direct comparison. Let’s see how we address this!
 						</p>
 
-						<h4><strong>Grade distribution and transformation</strong></h4>
-
 						<p>
-							BeerAdvocate allow the user to rate the five attributes on a scale of 1 to 5 with a resolution of 0.25, while RateBeer allow the user to rate aroma and taste between 1 and 10, appearance palate between 1 and 5 and overall between 1 and 20, all with a resolution of 1.
-							<br>
-							To perform our analysis, we must transform the grades to have the same scale between the two dataset. We decided to set the grade between 1 and 5 as most attributes are graded with this range. This is done by converting RateBeer scales according to the following formula : 
-
-							\[
-							\frac{\text{grade} - \text{min}}{\text{max} - \text{min}} \cdot 4 + 1
-							\]
-						
-							<ul>
-								<li>with \(\text{max}\) is the largest grade one can give to a given attribute.</li>
-								<li>with \(\text{min}\) is the lowest grade one can give to a given attribute.</li>
-							</ul>
-						</p>
-						<p>
-							A problem is still remaining, the grades do not have the same resolution at all. This will be seen further in the analysis.
+							BeerAdvocate uses a 1 to 5 scale (with 0.25 increments) to rate attributes, while RateBeer uses varying scales: aroma and taste (1 to 10), appearance and palate (1 to 5), and overall (1 to 20), all with 1-point increments.
+							To standardize the data, we converted all ratings to a 1 to 5 scale, as this range is the most common. However, differences in granularity between the datasets remain and will be explored in the analysis.
 						</p>
 					</div>
 				</section>
@@ -173,21 +158,7 @@
 							Beers with fewer ratings tend to show higher variability (e.g., two extreme opinions). 
 							To ensure reliable results, we exclude beers with ratings or reviews below a specified threshold.
 							<br>
-							Let's try to find a reasonable threshold!
-						</p>
-						<div class="image" style="text-align: center;">
-							<h3 style="text-align: center;"><strong>Effect of threshold on ratings and beer filterings</strong></h3>
-							<img src="images/threshold_filtering.png" style="max-width: 100%; height: auto;"/>
-						</div>
-						<p>
-							Choosing an appropriate threshold involves balancing two factors: maximizing data inclusion and ensuring meaningful variance. 
-							A lower threshold adds more beers but risks unreliable variance due to few ratings. 
-							A higher threshold filters out beers with insufficient ratings, ensuring more reliable variance. 
-							<br>
-							The plot shows a sharp decline in remaining ratings as the threshold increases from 5 to 50, after which the decline flattens. 
-							We also observe a steep decline in the percentage of beers remaining when threshold increase from 5 to 25 approximatively.
-							<br>
-							Therefore, a threshold of <strong>25</strong> is selected for the analysis.
+							We selected a threshold for minimum number of reviews of <strong>25</strong> ratings, as it balances data inclusion and variance reliability. More details can be found here.
 						</p>
 						<h4><strong>First classification</strong></h4>
 						<p>
@@ -197,7 +168,7 @@
 							The following plot shows the distribution of variances for each attribute.
 						</p>
 						<div class="image" style="text-align: center;">
-							<img src="images/variance_attributes.png" style="max-width: 100%; height: auto;"/>
+							<img src="images/variance_attribute.png" style="max-width: 100%; height: auto;"/>
 						</div>
 						<p>
 							The maximum variance is related to the overall grade. It can be interesting to classify these beers based on the value of this variance. 
@@ -219,7 +190,7 @@
 							This seems to works well, as it would aligns with our goal of defining three groups: controversial, neutral, and universal. 
 						</p>
 						<div class="image" style="text-align: center;">
-							<img src="images/gmm_label_1.png" style="max-width: 100%; height: auto;"/>
+							<img src="images/gmm_label.png" style="max-width: 100%; height: auto;"/>
 						</div>
 						<p>
 							The clusters were computed using standardized variances. 
@@ -228,9 +199,9 @@
 							Based on this, we define the clusters as follows:
 						</p>
 						<ul>
-							<li>Cluster 0 : Universal beers, accounting for 55.42% of those with sufficient number of ratings.</li>
-							<li>Cluster 1 : Neutral beers, representing 23.11%.</li>
-							<li>Cluster 2 : Cluster 2 : Controversial beers, representing 21.47%.</li>
+							<li>Cluster 0 : Controversial beers, representing 8.96% of the beers.</li>
+							<li>Cluster 1 : Universal beers, representing 41.41% of the beers.</li>
+							<li>Cluster 2 : Neutral beers, representing 49.63% of the beers.</li>
 						</ul>
 					</div>
 				</section>
