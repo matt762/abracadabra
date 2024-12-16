@@ -200,8 +200,38 @@
 							<img src="images/variance_attributes.png" style="max-width: 100%; height: auto;"/>
 						</div>
 						<p>
-							As the "overall" attribute is the most used to rate a beer, we use it to classify the beers. We 
+							The maximum variance is related to the overall grade. It can be interesting to classify these beers based on the value of this variance. 
+							However this raise the issue of defining a threshold for this variance. 
+							You can find here a deeper analysis showing how an arbitrary threshold is still a deent way to classifiy those beers.
+							It it interesting to note that the opinion is mainly related to the taste. 
+							However, this analysis rely only on one parameter to classifiy, and we believe that controversiality is thus multi-faceted and depend on the interplay of all attributes.
 						</p>
+
+						<h4><strong>Clustering</strong></h4>
+
+						<p>
+							Initial analysis showed no clear way to classify beers by controversiality. 
+							To tackle this, we now use a Gaussian Mixture Model (GMM), factoring in the variances of all five attributes to group beers as controversial, neutral, or universal. 
+							This helps capture complex patterns in the data.
+							<br>
+							<br>
+							Using the elbow method on the negative log-likelihood plot, we find the optimal number of clusters to be 3. 
+							This seems to works well, as it would aligns with our goal of defining three groups: controversial, neutral, and universal. 
+						</p>
+						<div class="image" style="text-align: center;">
+							<img src="images/gmm_label_1.png" style="max-width: 100%; height: auto;"/>
+						</div>
+						<p>
+							The clusters were computed using standardized variances. 
+							Variance serves as our key metric for controversiality: high variance indicates controversy, while low variance suggests universality. 
+							The plot shows scaled variances, where smaller values (near 0) represent low variance, and larger values indicate high variance. 
+							Based on this, we define the clusters as follows:
+						</p>
+						<ul>
+							<li>Cluster 0 : Universal beers, accounting for 55.42% of those with sufficient number of ratings.</li>
+							<li>Cluster 1 : Neutral beers, representing 23.11%.</li>
+							<li>Cluster 2 : Cluster 2 : Controversial beers, representing 21.47%.</li>
+						</ul>
 					</div>
 				</section>
 
