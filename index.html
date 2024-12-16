@@ -163,22 +163,52 @@
 							</dd>
 						</dl>
 						<p>
-							We can see that the definition is quite broad and can be applied to many different situations. 
-							In our case, we will focus on the beers that have the most polarized reviews, the one that may cause an argument, or a least a disagreament, if you would enter in a bar with a Shakespeare fan. 
-							As a result, this analysis only depends on the fields the users can fulfill, namely, the different ratings : appearance, aroma, palate, taste, overall, and the textual reviews
+							This definition is broad and applies to various situations, but for our analysis, we will focus on beers with the most polarised reviews: those likely to spark disagreement, even with a Shakespeare fan in the room. 
+							Our analysis relies on user ratings across appearance, aroma, palate, taste, overall, and textual reviews.
 							<br>
-							Our first analysis is based on the grades provided by the user. To do so, we will look at the variance. 
-							It measures the spread of the data around the mean, reflecting the level of disagreement among ratings. 
-							Furthermore, it is consistent across all attributes as it is dimension-independent, relying only on the grades given by the users.
+							We begin by examining the variance in user ratings, which indicates the level of disagreement around the average score. 
+							Variance is dimension-independent and consistent across attributes, based uniquely on the given ratings.
+							<br>
+							<br>
+							Beers with fewer ratings tend to show higher variability (e.g., two extreme opinions). 
+							To ensure reliable results, we exclude beers with ratings or reviews below a specified threshold.
+							<br>
+							Let's try to find a reasonable threshold!
 						</p>
-
-						---
-						<div class="iframe-container">
-							<iframe src="assets/plots/distri_beers.html" class="responsive-iframe"></iframe>
+						<div class="image" style="text-align: center;">
+							<h3 style="text-align: center;"><strong>Effect of threshold on ratings and beer filterings</strong></h3>
+							<img src="images/threshold_filtering.png" style="max-width: 100%; height: auto;"/>
 						</div>
-						---
+						<p>
+							Choosing an appropriate threshold involves balancing two factors: maximizing data inclusion and ensuring meaningful variance. 
+							A lower threshold adds more beers but risks unreliable variance due to few ratings. 
+							A higher threshold filters out beers with insufficient ratings, ensuring more reliable variance. 
+							<br>
+							The plot shows a sharp decline in remaining ratings as the threshold increases from 5 to 50, after which the decline flattens. 
+							We also observe a steep decline in the percentage of beers remaining when threshold increase from 5 to 25 approximatively.
+							<br>
+							Therefore, a threshold of <strong>25</strong> is selected for the analysis.
+						</p>
+						<p>
+							With all that data cleaning, it is time to proceed to the first classification.
+							To find if a beer is controversial or not, we will use the distribution of variances of each attribute.
+							<br>
+							The following plot shows the distribution of variances for each attribute.
+						</p>
+						<div class="image" style="text-align: center;">
+							<img src="images/variance_attributes.png" style="max-width: 100%; height: auto;"/>
+						</div>
+						<p>
+							As the "overall" attribute is the most used to rate a beer, we use it to classify the beers. We 
+						</p>
 					</div>
 				</section>
+
+						<!-- PLOT EXAMPLE
+						<div class="iframe-container">
+							<iframe src="assets/plots/aabv_plot.html" class="responsive-iframe"></iframe>
+						</div>
+						-->
 
 				<!-- Team Section -->
 					<section class="wrapper style1 align-center">
