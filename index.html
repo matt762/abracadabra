@@ -168,12 +168,14 @@
 							The following plot shows the distribution of variances for each attribute.
 						</p>
 						<div class="image" style="text-align: center;">
+							<h1 style="text-align: center;"><strong>!! USELESS PLOT !!</strong></h1>
 							<img src="images/variance_attribute.png" style="max-width: 100%; height: auto;"/>
+							<h1 style="text-align: center;"><strong>!! USELESS PLOT !!</strong></h1>
 						</div>
 						<p>
-							The maximum variance is related to the overall grade. It can be interesting to classify these beers based on the value of this variance. 
+							It can be interesting to classify these beers based on the value of the overall grade variance since it should take in account all of hte other attributes. 
 							However this raise the issue of defining a threshold for this variance. 
-							You can find here a deeper analysis showing how an arbitrary threshold is still a deent way to classifiy those beers.
+							You can find here a deeper analysis showing how an arbitrary threshold is still a decent way to classifiy those beers.
 							It it interesting to note that the opinion is mainly related to the taste. 
 							However, this analysis rely only on one parameter to classifiy, and we believe that controversiality is thus multi-faceted and depend on the interplay of all attributes.
 						</p>
@@ -203,14 +205,49 @@
 							<li>Cluster 1 : Universal beers, representing 41.41% of the beers.</li>
 							<li>Cluster 2 : Neutral beers, representing 49.63% of the beers.</li>
 						</ul>
+
+						<br>
+
+						<h2>Extracting informations from the textual reviews</h2>
+
+						<p>
+							That analysis seems better as the Gaussian Mixture Model allow us to take into account the interplay of all attributes. 
+							Lets see now if we can use the textual reviews to help us define the controversiality of a beer.
+
+							<br>
+
+							Based on the first 6,000 comments, we selected the most accurate model to find the sentiment of each review. 
+							Each review is classified in one of the following categories:
+							<li>Positive</li>
+							<li>Neutral</li>
+							<li>Negative</li>
+
+							<br>
+
+							Since we don't have true labels for validation of model capabilities, we the similarity between models to compare them. 
+							We selected a a BERT-based model since it has the best accuracy/cost ratio to run locally.
+
+							<br>
+							<br>
+
+							With this new information in mind, let's try to do the Gaussian Mixture Model again, but this time with the sentiment of the reviews.
+							<br>
+							There are two models: <strong>Model 1</strong> is the one accounting for all ratings, and <strong>Model 2</strong> is the one accounting only for ratings with text (resulting in a <strong>13% loss of data</strong> to meet our 25 beers threshold).
+							We compared the similarity between the two models in labelling beers in 3 categories: <strong>Controversial</strong>, <strong>Neutral</strong>, and <strong>Universal</strong>.
+							We also
+						</p>
+						<div class="image" style="text-align: center;">
+							<h3 style="text-align: center;"><strong>Percentage of beers that have the same labels between models</strong></h3>
+							<img src="images/similarity_sentiment.png" style="max-width: 100%; height: auto;"/>
+						</div>
 					</div>
 				</section>
 
-						<!-- PLOT EXAMPLE
-						<div class="iframe-container">
-							<iframe src="assets/plots/aabv_plot.html" class="responsive-iframe"></iframe>
-						</div>
-						-->
+				<!-- PLOT EXAMPLE
+				<div class="iframe-container">
+					<iframe src="assets/plots/aabv_plot.html" class="responsive-iframe"></iframe>
+				</div>
+				-->
 
 				<!-- Team Section -->
 					<section class="wrapper style1 align-center">
