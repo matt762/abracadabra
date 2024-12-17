@@ -213,16 +213,9 @@
 						<p>
 							That analysis seems better as the Gaussian Mixture Model allow us to take into account the interplay of all attributes. 
 							Lets see now if we can use the textual reviews to help us define the controversiality of a beer.
-
 							<br>
-
 							Based on the first 6,000 comments, we selected the most accurate model to find the sentiment of each review. 
-							Each review is classified in one of the following categories:
-							<li>Positive</li>
-							<li>Neutral</li>
-							<li>Negative</li>
-
-							<br>
+							Each review is classified in one of the following categories: Positive, Neutral, or Negative.
 
 							Since we don't have true labels for validation of model capabilities, we the similarity between models to compare them. 
 							We selected a a BERT-based model since it has the best accuracy/cost ratio to run locally.
@@ -232,14 +225,21 @@
 
 							With this new information in mind, let's try to do the Gaussian Mixture Model again, but this time with the sentiment of the reviews.
 							<br>
-							There are two models: <strong>Model 1</strong> is the one accounting for all ratings, and <strong>Model 2</strong> is the one accounting only for ratings with text (resulting in a <strong>13% loss of data</strong> to meet our 25 beers threshold).
-							We compared the similarity between the two models in labelling beers in 3 categories: <strong>Controversial</strong>, <strong>Neutral</strong>, and <strong>Universal</strong>.
-							We also
+							There are three GMMs that all classify in the three categories (Controversial, Universal and Neutral), but with different data:
+							<ul>
+								<li><strong>Model 1</strong> is computed for all ratings.</li>
+								<li><strong>Model 2</strong> is computed only for ratings with text with sentiment label.</li>
+								<li><strong>Model 3</strong> is computed only for ratings with text without sentiment labels.</li>
+							</ul>
 						</p>
 						<div class="image" style="text-align: center;">
 							<h3 style="text-align: center;"><strong>Percentage of beers that have the same labels between models</strong></h3>
-							<img src="images/similarity_sentiment.png" style="max-width: 100%; height: auto;"/>
+							<img src="images/similarity_sentiment_1.png" style="max-width: 100%; height: auto;"/>
 						</div>
+						<p>
+							Taking only the reviews with text results in a <strong>13% loss of data</strong> to meet our 25 beers threshold. 
+							Considering the similarity between the models, we will follow without using the sentiment analysis, since the loss of data is too high.
+						</p>
 					</div>
 				</section>
 
