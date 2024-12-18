@@ -211,20 +211,15 @@
 						<h2>Extracting informations from the textual reviews</h2>
 
 						<p>
-							That analysis seems better as the Gaussian Mixture Model allow us to take into account the interplay of all attributes. 
-							Lets see now if we can use the textual reviews to help us define the controversiality of a beer.
-							<br>
-							Based on the first 6,000 comments, we selected the most accurate model to find the sentiment of each review. 
-							Each review is classified in one of the following categories: Positive, Neutral, or Negative.
-
-							Since we don't have true labels for validation of model capabilities, we the similarity between models to compare them. 
-							We selected a a BERT-based model since it has the best accuracy/cost ratio to run locally.
+							The Gaussian Mixture Model offers a more effective analysis by considering the interaction of all attributes. 
+							To further investigate, we explore how textual reviews can help define beer controversiality. 
+							Using the first 6,000 comments, we identified the most accurate model for sentiment analysis, classifying each review as Positive, Neutral, or Negative. 
+							Due to the lack of true labels for validation, we compare model performance based on similarity, ultimately selecting a BERT-based model for its optimal accuracy-to-cost ratio for local execution.
 
 							<br>
 							<br>
 
 							With this new information in mind, let's try to do the Gaussian Mixture Model again, but this time with the sentiment of the reviews.
-							<br>
 							There are three GMMs that all classify in the three categories (Controversial, Universal and Neutral), but with different data:
 							<ul>
 								<li><strong>Model 1</strong> is computed for all ratings.</li>
@@ -237,9 +232,20 @@
 							<img src="images/similarity_sentiment.png" style="max-width: 100%; height: auto;"/>
 						</div>
 						<p>
-							Taking only the reviews with text results in a <strong>13% loss of data</strong> to meet our 25 beers threshold. 
-							Considering the similarity between the models, we will follow without using the sentiment analysis, since the loss of data is too high.
+							Taking only the reviews with text results in a <strong>13% loss of data</strong>. 
+							Considering the similarity between the models, the loss of data and the uncertainty added by the sentiment analysis, we will follow without using the sentiment analysis.
 						</p>
+
+						<h2>Exploring the definition of controversiality</h2>
+
+						<p>
+							Now that we have a good classification for the controversiality of the beers, we can start to explore the data to find the reasons behind it.
+
+							<h4><strong>Alcohol By Volume (ABV)</strong></h4>
+						</p>
+						<div class="image" style="text-align: center;">
+							<img src="images/abv.png" style="max-width: 100%; height: auto;"/>
+						</div>
 					</div>
 				</section>
 
