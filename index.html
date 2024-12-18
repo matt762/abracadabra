@@ -79,7 +79,7 @@
 						<ul class="default" style="margin-left: 50px;">
 							<li>How can we define controversiality and can we distinguish these two classes effectively?</li>
 							<br>
-							<li>Does the sentiment analyses match the rating, can we match the attributes with the sexntiment analyses? Can the sentiment analyses help with the definition of controversiality ?</li>
+							<li>Is the text review coherent with the numerical grade given by the user ? Can we use this text to enhance our controversiality definition ?</li>
 							<br>
 							<li>Which attributes, such as aroma, appearance, palate, and taste, are most associated with a beer being perceived as controversial?</li>
 							<br>
@@ -246,6 +246,28 @@
 						<div class="image" style="text-align: center;">
 							<img src="images/abv.png" style="max-width: 100%; height: auto;"/>
 						</div>
+						<p>
+							By analysing the evolution of the proportion of the classification of the beers per level of alcohol by volume we can extract two main points:
+							<ul>
+								<li>The proportion of universal beers increases with the alcohol by volume, whereas the proportion of controversial and neutral beers decreases.</li>
+								<li>The more alcohol by volume the less beers there is after a peak around 5%. This leads to oscillations of the proportions when there is not enough beers left. After a certain level we could conclude that there are no universal beers left, however the low number of beers at this level is unsuficient to conclude this.</li>
+							</ul>
+							<h4><strong>Number of ratings per beer</strong></h4>
+						</p>
+						<div class="image" style="text-align: center;">
+							<img src="images/number_of_ratings.png" style="max-width: 100%; height: auto;"/>
+						</div>
+						<p>
+							The study of the number of rating didn't prove as fruitful in gain of information. The number of beers slowly decreases with the number of ratings. Finally the universal and controversial beers proportion slightly increase, however those are two opposite clusters and does not make it more easy to find a trend.
+
+							<h4><strong>Level of the user</strong></h4>
+						</p>
+						<div class="image" style="text-align: center;">
+							<img src="images/user_level.png" style="max-width: 100%; height: auto;"/>
+						</div>
+						<p>
+							For this data analysis study we had the fantasy where we believed that the depending of the level of the users, he would grade beers differently. By level we mean that a user is first classified as novice, after having made 20 ratings he becomes an enthusiast and after 800 ratings he reaches the level of connoisseur. From the study we clearly see that the proportion of controversial and neutral rated beers decreases. The more a user rates beer the more he starts to grade universal beers. One would need to study the graders behavior to understand why they increase the proportion of universal beers. 
+						</p>
 					</div>
 				</section>
 
