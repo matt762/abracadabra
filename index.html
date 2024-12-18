@@ -240,8 +240,17 @@
 
 						<p>
 							Now that we have a good classification for the controversiality of the beers, we can start to explore the data to find the reasons behind it.
+						</p>
 
-							<h4><strong>Alcohol By Volume (ABV)</strong></h4>
+						<p>
+							<h4><strong>Alcohol By Volume</strong></h4>
+
+							Alcohol By Volume (ABV) is a key attribute of beer, influencing its taste and aroma. 
+							We found, as expected, that extreme values of ABV are related to the controversilty of the beer. 
+							Moreover, the most common beers (with ABV between 4% and 10%) are the most universal.
+							One thing interesting is that in these universal beers, the more ABV, the more universal the beer is. 
+							This would mean that people from this website tends to truly agree on relatively strong beers (between 7% and 10%), whether they like it or not.
+							The following plot shows the distribution of beers and classification.
 						</p>
 						<div class="image" style="text-align: center;">
 							<img src="images/abv.png" style="max-width: 100%; height: auto;"/>
@@ -267,6 +276,52 @@
 						</div>
 						<p>
 							For this data analysis study we had the fantasy where we believed that the depending of the level of the users, he would grade beers differently. By level we mean that a user is first classified as novice, after having made 20 ratings he becomes an enthusiast and after 800 ratings he reaches the level of connoisseur. From the study we clearly see that the proportion of controversial and neutral rated beers decreases. The more a user rates beer the more he starts to grade universal beers. One would need to study the graders behavior to understand why they increase the proportion of universal beers. 
+						</p>
+
+						<p>
+							<h4><strong>Number of reviews</strong></h4>
+							
+							We performed a similar analysis for the number of reviews per beer, showing that independently of the number of reviews, the distribution of the controversiality of the beers remains the same.
+						</p>
+						<div class="image" style="text-align: center;">
+							<img src="images/number_users.png" style="max-width: 100%; height: auto;"/>
+						</div>
+						<p>
+							<h4><strong>Expertise level of the user</strong></h4>
+							It is important to also consider which user made the review, the severity and controversialy is probably different at the first review compared to the 5,000th one.
+							We classified the user in three categories: novice, enthusiasts and connoisseurs. 
+							The more advanced an user is, the less there reviews are controversial and neutral. However, the proportion of universal ratings increase.
+							This is interesting as it may show an effect from other reviews, or on the other side, a bias of expertise as reviews from connoisseurs may be taken more seriously than beginners.
+
+						</p>
+						<div class="image" style="text-align: center;">
+							<img src="images/connoisseurs.png" style="max-width: 100%; height: auto;"/>
+						</div>
+
+						<p>
+							<h4><strong>Country of the users</strong></h4>
+
+							Remembering that around half of the reviews come from the U.S.A, the following maps show the the frequency of labels (neutral, universal or controversial) per country, by the user from this country.
+
+							<br>
+							<br>
+
+							<div class="image-box">
+								<select id="imageSelector" onchange="switchImage()">
+									<option value="images/chauvin_controversial.png">Controversial</option>
+									<option value="images/chauvin_neutral.png">Neutral</option>
+									<option value="images/chauvin_universal.png">Universal</option>
+								</select>
+								<img id="displayedImage" src="images/chauvin_controversial.png" alt="Choose a map">
+							</div>
+						
+							<script>
+								function switchImage() {
+									const imageSelector = document.getElementById('imageSelector');
+									const displayedImage = document.getElementById('displayedImage');
+									displayedImage.src = imageSelector.value;
+								}
+							</script>
 						</p>
 					</div>
 				</section>

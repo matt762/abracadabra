@@ -8627,3 +8627,22 @@ input, select, textarea {
 			}
 
 /* Start https://www.cursors-4u.com */ * {cursor: url(https://cur.cursors-4u.net/food/foo-2/foo108.cur), auto !important;} /* End https://www.cursors-4u.com */
+
+.image-box {
+    text-align: center;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px; /* Adjusted width for better image display */
+    background-color: white;
+}
+.image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+select {
+    margin-bottom: 10px;
+    padding: 5px; /* Reduced padding for a more compact look */
+    width: 150px;
+}
