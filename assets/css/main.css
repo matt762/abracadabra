@@ -8633,7 +8633,7 @@ input, select, textarea {
     border: 2px solid white;
     padding: 10px;
     border-radius: 10px;
-    width: 200px; /* Adjusted width for better image display */
+    width: 100%;
     background-color: white;
 }
 .image-box img {
@@ -8644,5 +8644,5 @@ input, select, textarea {
 select {
     margin-bottom: 10px;
     padding: 5px; /* Reduced padding for a more compact look */
-    width: 150px;
+    width: 50%;
 }
