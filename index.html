@@ -215,19 +215,20 @@
 
 						<br>
 
-						<h2>Extracting informations from the textual reviews</h2>
+						<h2>Extracting insights from textual reviews</h2>
 
 						<p>
-							The Gaussian Mixture Model offers a more effective analysis by considering the interaction of all attributes. 
-							To further investigate, we explore how textual reviews can help define beer controversiality. 
-							Using the first 6,000 comments, we identified the most accurate model for sentiment analysis, classifying each review as Positive, Neutral, or Negative. 
-							Due to the lack of true labels for validation, we compare model performance based on similarity, ultimately selecting a BERT-based model for its optimal accuracy-to-cost ratio for local execution.
+							The Gaussian Mixture Model offers a more effective analysis by considering the interaction of all attributes.
+							We are now going to extend our exploration by including insights from textual reviews to better define beer controversiality.
+							Our first approach was to use a <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/src/scripts/sentiment%20analysis/README.md" target="_blank">sentiment analysis model</a> on every qualitative review.
+							Using the first 6,000 comments, we identified the most accurate model, classifying each review as either Positive, Neutral, or Negative.
+							Due to the lack of true labels for validation, we compared model performance based on similarity, ultimately selecting a BERT-based model for its optimal accuracy-to-cost ratio for local execution.
 
 							<br>
 							<br>
 
-							With this new information in mind, let's try to do the Gaussian Mixture Model again, but this time with the sentiment of the reviews.
-							There are three GMMs that all classify in the three categories (Controversial, Universal and Neutral), but with different data:
+							With this new information, we attempted the Gaussian Mixture Model again, this time incorporating sentiment classifications.
+							Three models were constructed, each categorizes beers into three categories (Controversial, Universal and Neutral), but differs in the data used:
 							<ul>
 								<li><strong>Model 1</strong> is computed for all ratings.</li>
 								<li><strong>Model 2</strong> is computed only for ratings with text with sentiment label.</li>
@@ -239,8 +240,11 @@
 							<img src="images/similarity_sentiment.png" style="max-width: 100%; height: auto;"/>
 						</div>
 						<p>
-							Taking only the reviews with text results in a <strong>13% loss of data</strong>. 
-							Considering the similarity between the models, the loss of data and the uncertainty added by the sentiment analysis, we will follow without using the sentiment analysis.
+							Restricting the data to only reviews with text results in a <strong>13% loss</strong> in the dataset size.
+							Despite the additional information provided by sentiment analysis, the results showed that the similarity between
+							the models was high, suggesting that sentiment analysis did not significantly alter the classification.
+							Considering the lack of improvement in classification accuracy, the loss of data and the uncertainty added by the sentiment analysis,
+							we will follow without using the sentiment analysis.
 						</p>
 
 						<h2>Exploring the definition of controversiality</h2>
