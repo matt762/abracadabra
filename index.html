@@ -96,14 +96,12 @@
 				<section class="wrapper style1 align-left">
 					<div class="inner">
 						<header>
-							<h2>Data presentation</h2>
+							<h2><a href="https://drive.google.com/drive/folders/1lcRRxlPpcyAcqJzanlwcyb5Vmip0s7_D" target="_blank">Data</a> presentation</h2>
 						</header>
 
 						<p>
-							To ensure consistency in our analysis, we formatted all data, including text, into CSV files.
-							This allowed us to dive deeper into the dataset and uncover an interesting pattern: breweries, beers, and users were present in both RateBeer and BeerAdvocate.	We also found instances where a single brewery in one dataset corresponded to multiple entries in the other.
-							Since our objective is to determine whether a beer is more controversial or universally accepted, we merged the two datasets into one.
-							The result is a unified dataset encompassing beers, breweries, users, and reviews, with consistent ID  matching across all features.
+							To begin this analysis, we first uncovered an interesting pattern: some breweries, beers, and users were present in both <a href="https://drive.google.com/drive/folders/1hhNM7Hc2ZrOtNWaflbaVKFFWpyVeiSbw" target="_blank">RateBeer</a> and <a href="https://drive.google.com/drive/folders/1fwgH0RK4vAZ5i9HI-rPUbXNdC09qrss-" target="_blank">BeerAdvocate</a>.	We also found instances where a single brewery in one dataset corresponded to multiple entries in the other.
+							We merged the two datasets into a single unified <a href="https://drive.google.com/drive/folders/1QlduSz83RzRv58ec6sGmJ7K6TlWlWi44" target="_blank">one</a> encompassing beers, breweries, users, and reviews, with consistent ID  matching across all features.
 							More details on how the datasets were merged can be found <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/data/README.md" target="_blank">here</a>.
 						<!-- TODO: CHECK LINK! -->
 						</p>
@@ -127,13 +125,6 @@
 						<!-- TODO: How do we change "number of ratings" to "number of reviews"? -->
 						<p>
 							Reviews from both websites follow a similar structure: users rate the appearance, aroma, palate, and taste of each beer, as well as provide an overall grade.
-							However, we encounter our first challenge: the grading scales differ between the two datasets, complicating direct comparison. Let’s see how we address this!
-							<!-- TODO: Not sure about the "!" -->
-
-						</p>
-
-						<p>
-							BeerAdvocate uses a 1 to 5 scale (with 0.25 increments) for all attributes, while RateBeer employs varying scales: aroma and taste (1 to 10), appearance and palate (1 to 5), and overall (1 to 20), all with 1-point increments.
 							To standardize the data, we converted all ratings to a unified 1-to-5 scale, as this range is the most widely used. While differences in granularity between the datasets remain, these will be further explored in our analysis.
 						</p>
 					</div>
