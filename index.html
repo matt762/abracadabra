@@ -121,6 +121,7 @@
     						Below is a visualization highlighting the 20 countries with the most reviews in our dataset.
 						</p>
 						<div class="flourish-embed flourish-hierarchy" data-src="visualisation/20776364"><h3 style="text-align: center;"><strong>Top 20 countries by number of beer reviews</strong></h3><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20776364/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
+						<!-- TODO: How do we change "number of ratings" to "number of reviews"? -->
 						<p>
 							Reviews from both websites follow a similar structure: users rate the appearance, aroma, palate, and taste of each beer, as well as provide an overall grade.
 							However, we encounter our first challenge: the grading scales differ between the two datasets, complicating direct comparison. Let’s see how we address this!
@@ -142,7 +143,7 @@
 						</header>
 
 						<p>
-							To find controversiality in our dataset, we first need to understand what it is and how we may look for it in all that data. Here is global definition to begin with:
+							To identify controversiality in our dataset, we first need to define what it means and how to measure it. Let’s start with a general definition:
 						</p>
 						<dl>
 							<dt>Controversial:</dt>
@@ -153,22 +154,23 @@
 							</dd>
 						</dl>
 						<p>
-							This definition is broad and applies to various situations, but for our analysis, we will focus on beers with the most polarised reviews: those likely to spark disagreement, even with a Shakespeare fan in the room. 
-							Our analysis relies on user ratings across appearance, aroma, palate, taste, overall, and textual reviews.
+							While this definition is broad and applies to various situations, our analysis narrows it to beers with the most polarised reviews: those who are most likely to spark disagreement, even with a Shakespeare fan in the room.
+							We base our analysis on user ratings across appearance, aroma, palate, taste and overall features as well as textual reviews.
 							<br>
-							We begin by examining the variance in user ratings, which indicates the level of disagreement around the average score. 
-							Variance is dimension-independent and consistent across attributes, based uniquely on the given ratings.
+							We begin by analysing the variance in user ratings, which describes the level of disagreement around the average score.
+            				Since variance is dimension-independent, it provides a consistent measure across attributes, relying uniquely on the given ratings.
 							<br>
 							<br>
-							Beers with fewer ratings tend to show higher variability (e.g., two extreme opinions). 
-							To ensure reliable results, we exclude beers with ratings or reviews below a specified threshold.
+							We also noticed that beers with fewer ratings tend to show higher variability (e.g., two extreme opinions).
+							To ensure reliable results, we exclude beers with fewer than a specified minimum number of ratings or reviews.
 							<br>
-							We selected a threshold for minimum number of reviews of <strong>25</strong> ratings, as it balances data inclusion and variance reliability. More details can be found here.
+							We chose a threshold of <strong>25</strong> reviews or ratings, which balances data inclusion with reliable variance measurement. More details on this decision can be found <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/data/README.md" target="_blank">here</a>.
+							<!-- TODO: CHECK LINK! -->
 						</p>
 						<h4><strong>First classification</strong></h4>
 						<p>
-							With all that data cleaning, it is time to proceed to the first classification.
-							To find if a beer is controversial or not, we will use the distribution of variances of each attribute.
+							With the data cleaned, the first step in classifying beers as controversial or not involves analyzing
+							the variances of each attribute
 							<br>
 							The following plot shows the distribution of variances for each attribute.
 						</p>
@@ -178,30 +180,30 @@
 							<h1 style="text-align: center;"><strong>!! USELESS PLOT !!</strong></h1>
 						</div>
 						<p>
-							It can be interesting to classify these beers based on the value of the overall grade variance since it should take in account all of hte other attributes. 
-							However this raise the issue of defining a threshold for this variance. 
-							You can find here a deeper analysis showing how an arbitrary threshold is still a decent way to classifiy those beers.
-							It it interesting to note that the opinion is mainly related to the taste. 
-							However, this analysis rely only on one parameter to classifiy, and we believe that controversiality is thus multi-faceted and depend on the interplay of all attributes.
+							At first, it may seem logical to use the variance of the overall grade, as it reflects a combination of each attribute.
+							However, setting a threshold for this variance presents challenges.
+							A <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/data/README.md" target="_blank">deeper analysis</a> revealed
+							that while an arbitrary threshold could work reasonably well, it primarily highlighted taste as the most polarizing factor.
+							We believe that relying solely on a single parameter oversimplifies controversiality, and that it is inherently multi-dimensional and influenced by the interaction of all attributes.
 						</p>
 
 						<h4><strong>Clustering</strong></h4>
 
 						<p>
-							Initial analysis showed no clear way to classify beers by controversiality. 
-							To tackle this, we now use a Gaussian Mixture Model (GMM), factoring in the variances of all five attributes to group beers as controversial, neutral, or universal. 
-							This helps capture complex patterns in the data.
+							Recognizing the limitations of a one-dimensional approach, we turned to a clustering method.
+							We chose to use a Gaussian Mixture Model (GMM), factoring in the variances of all five attributes to group beers as either controversial, neutral, or universal.
+							This allows us to capture complex patterns in the data.
 							<br>
 							<br>
-							Using the elbow method on the negative log-likelihood plot, we find the optimal number of clusters to be 3. 
-							This seems to works well, as it would aligns with our goal of defining three groups: controversial, neutral, and universal. 
+							Using the elbow method on the negative log-likelihood plot, we determined three clusters to be optimal.
+							This aligns well with the goal of categorizing beers into three groups: controversial, neutral, and universal.
 						</p>
 						<div class="image" style="text-align: center;">
 							<img src="images/gmm_label.png" style="max-width: 100%; height: auto;"/>
 						</div>
 						<p>
 							The clusters were computed using standardized variances. 
-							Variance serves as our key metric for controversiality: high variance indicates controversy, while low variance suggests universality. 
+							They serve as our key metric for controversiality: High variance indicates controversy or disagreement, while low variance suggests a universal appeal.
 							The plot shows scaled variances, where smaller values (near 0) represent low variance, and larger values indicate high variance. 
 							Based on this, we define the clusters as follows:
 						</p>
