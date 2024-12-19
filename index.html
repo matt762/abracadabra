@@ -77,6 +77,9 @@
 						<h2>Research questions</h2>
 						<p>The following key questions define how this study is structured and what are the main topic that we will explore.</p>						
 						<ul class="default" style="margin-left: 50px;">
+							<li>How can we classify beers based on the controversiality? Which numerical graded attributes are most associated with beers perceived as controversial? Can we use the textual review to enhance our classification ?</li>
+							<li>Are there features explaining this classification? Are the feature dependant on the beer itself? </li>
+							------------------------------------------------------------------------------------------------------------
 							<li>How can we define controversiality and can we distinguish these two classes effectively?</li>
 							<br>
 							<li>Is the text review coherent with the numerical grade given by the user ? Can we use this text to enhance our controversiality definition ?</li>
@@ -120,7 +123,7 @@
 							We decided not to rebalance the dataset, as doing so would have excluded many brews and reviews, that are still relevant to our analysis.
     						Below is a visualization highlighting the 20 countries with the most reviews in our dataset.
 						</p>
-						<div class="flourish-embed flourish-hierarchy" data-src="visualisation/20776364"><h3 style="text-align: center;"><strong>Top 20 countries by number of beer reviews</strong></h3><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20776364/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
+						<div class="flourish-embed flourish-hierarchy" data-src="visualisation/20776364"><h3 style="text-align: center;"><strong>Top countries by number of beer reviews</strong></h3><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20776364/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
 						<!-- TODO: How do we change "number of ratings" to "number of reviews"? -->
 						<p>
 							Reviews from both websites follow a similar structure: users rate the appearance, aroma, palate, and taste of each beer, as well as provide an overall grade.
@@ -337,6 +340,52 @@
 								}
 							</script>
 						</p>
+						<p>
+							<h4><strong>Location of the brewery</strong></h4>
+							Just like the user origin, we wanted to analyse the origin of the beer. 
+							The aim is to see if countries have a higher proportion of beers coming from their country labels as controversial for example. 
+							For this study we would expect the percentage of the different countries to lie around 37, 53 and 10% for the proportion of universal,
+							controversial and neutral beers. 
+							<br>
+							<br>
+							<div class="image-box">
+								<select id="imageSelector2" onchange="switchImage2()">
+									<option value="images/brewery_controversial.png">Controversial</option>
+									<option value="images/brewery_neutral.png">Neutral</option>
+									<option value="images/brewery_universal.png">Universal</option>
+								</select>
+								<img id="displayedImage2" src="images/brewery_controversial.png" alt="Choose a map">
+							</div>
+							<script>
+								function switchImage2() {
+									const imageSelector = document.getElementById('imageSelector2');
+									const displayedImage = document.getElementById('displayedImage2');
+									displayedImage.src = imageSelector.value;
+								}
+							</script>
+						</p>
+						<p>
+							<h4><strong>Score of comment habit</strong></h4>
+							Finally we defined a score of comment habit. This score tells us if a users from country tend to rate a higher proportion of beers
+							coming from their own country or from foreign ones. On the following map the score tends to one if the proportion of a let's say universal 
+							<br>
+							<br>
+							<div class="image-box">
+								<select id="imageSelector3" onchange="switchImage3()">
+									<option value="images/score_controversial.png">Controversial</option>
+									<option value="images/score_neutral.png">Neutral</option>
+									<option value="images/score_universal.png">Universal</option>
+								</select>
+								<img id="displayedImage3" src="images/score_controversial.png" alt="Choose a map">
+							</div>
+							<script>
+								function switchImage3() {
+									const imageSelector = document.getElementById('imageSelector3');
+									const displayedImage = document.getElementById('displayedImage3');
+									displayedImage.src = imageSelector.value;
+								}
+							</script>
+						</p>
 					</div>
 				</section>
 
@@ -384,7 +433,13 @@
 						<header>
 							<h2>To go further</h2>
 						</header>
-
+						<p>
+							During our study we found that the clusters where sensitive to the number of beers used. Ensuring th have as many beers as possible
+							would ensure more robust results and mainly clusters. However for this we would need to have a lower impact of the variance variation
+							at low number of ratings. Even in our case we chose a threshold which marks the beginning of a plateau, however it still slowly decreases over 
+							the number of ratings. Therefore finding a way to weight the number of ratings of our analysis would improve the robustness of our analysis
+							and enable to have even more precise results.
+						</p>
 						<p>
 							One way to delve deeper into understanding why a beer might be controversial is by analyzing
 							qualitative reviews. While quantitative data analysis is already complex, the true insights behind
