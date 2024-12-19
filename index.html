@@ -112,23 +112,25 @@
 							<img src="images/dataset_summary.png" style="max-width: 100%; height: auto;"/>
 						</div>
 						<p>
-							This dataset offers a rich source of information for our analysis. Fortunately, approximately <strong>90% of the beers have at least one review</strong>, ensuring that our findings will be both meaningful and insightful. 
-							For this project, we will focus only on these beers.
+							This dataset provides a rich source of information for our analysis. Notably, approximately <strong>90% of the beers have at least one review</strong>, ensuring that our findings will be both meaningful and insightful.
+							For this project, we will focus solely on these beers.
 						</p>
 						<p>
-							However, it’s important to note that our dataset is not fully representative. The majority of the reviews are from American, meaning our analysis largely reflects preferences and tastes specific to them. 
-							We chose not to rebalance the dataset, as doing so would have excluded a variety of brews and reviews, which are still relevant for our later analysis. 
-							The following plot presents the 20 countries with the most reviews in our dataset.
+							It is important to acknowledge, however, that the dataset is not fully representative. A significant portion of the reviews comes from American users, meaning our analysis primarily reflects their preferences and tastes.
+							We decided not to rebalance the dataset, as doing so would have excluded many brews and reviews, that are still relevant to our analysis.
+    						Below is a visualization highlighting the 20 countries with the most reviews in our dataset.
 						</p>
 						<div class="flourish-embed flourish-hierarchy" data-src="visualisation/20776364"><h3 style="text-align: center;"><strong>Top 20 countries by number of beer reviews</strong></h3><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20776364/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
 						<p>
-							The reviews on both websites are structured in the same way: users can rate the appearance, aroma, palate, and taste of each beer, in addition to providing an overall grade for each beer. 
-							However, we encounter our first issue here: the grading scales differ between the datasets, which complicates direct comparison. Let’s see how we address this!
+							Reviews from both websites follow a similar structure: users rate the appearance, aroma, palate, and taste of each beer, as well as provide an overall grade.
+							However, we encounter our first challenge: the grading scales differ between the two datasets, complicating direct comparison. Let’s see how we address this!
+							<!-- TODO: Not sure about the "!" -->
+
 						</p>
 
 						<p>
-							BeerAdvocate uses a 1 to 5 scale (with 0.25 increments) to rate attributes, while RateBeer uses varying scales: aroma and taste (1 to 10), appearance and palate (1 to 5), and overall (1 to 20), all with 1-point increments.
-							To standardize the data, we converted all ratings to a 1 to 5 scale, as this range is the most common. However, differences in granularity between the datasets remain and will be explored in the analysis.
+							BeerAdvocate uses a 1 to 5 scale (with 0.25 increments) for all attributes, while RateBeer employs varying scales: aroma and taste (1 to 10), appearance and palate (1 to 5), and overall (1 to 20), all with 1-point increments.
+							To standardize the data, we converted all ratings to a unified 1-to-5 scale, as this range is the most widely used. While differences in granularity between the datasets remain, these will be further explored in our analysis.
 						</p>
 					</div>
 				</section>
