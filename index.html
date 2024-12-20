@@ -305,7 +305,7 @@
 						<p>
 							<h4><strong>Location of the brewery</strong></h4>
 							Similarly, we analysed the origin of the beers themselves.
-							We anticipate the proportion of each category for each country to be similar to the overall division,.
+							We anticipate the proportion of each category for each country to be similar to the overall division, especially for the country with a lot of beers.
 							<br>
 							<br>
 							<div class="image-box">
@@ -323,16 +323,15 @@
 									displayedImage.src = imageSelector.value;
 								}
 							</script>
+							We can see that our hypothesis holds for the European countries. However, the US seem to have a higher percentage of universal beers than expected. Furthermore, south american, asian and some african countries, as well as some smaller countries, tends to have a higher proportion of controversial beers. Since some countries have fewer beers, they might have a higher proportion of controversial beers and not follow our initial hypothesis.
 						</p>
 						<p>
 							<h4><strong>Score of comment habit</strong></h4>
-							Finally, we defined a score to measure comment habit. This score indicates whether users from
-							a specific country tend to rate a higher proportion of beers
-							coming from their own country or from foreign ones. On the map below the score approaches <strong>+1</strong> if
-							the proportion of universal labels is higher for home beers and tends to <strong>-1</strong> if the
+							Finally, we defined a score to measure comment habit. This score indicates whether users tend to rate a higher proportion of local beers or foreign ones. On the map below the score approaches <strong>+1</strong> if
+							the proportion of universal labels is higher for home beers and goes to <strong>-1</strong> if the
 							proportion is higher for foreign beer.
 							<br>
-							Let \( s_x^{class} \) be the frequency of a certain class for beers of the country similar as the country of origin of the user, and let \( s_y^{class} \) be the frequency for a certain class for beers of the country different to the country of origin of the user, we obtain that the score per country is defined as:
+							Let \( s_x^{class} \) be the proportion of a category of beers (controversial, universal or neutral) that are from the same country as the user, and let \( s_y^{class} \) be the be the proportion of a category of beers that are from a different country as the user, we obtain that the score per country is defined as:
 							\[ Score^{class} = s_x^{class} - s_y^{class}\]
 							<br>
 							<div class="image-box">
@@ -350,6 +349,19 @@
 									displayedImage.src = imageSelector.value;
 								}
 							</script>
+							We can observe that:
+							<ul>
+								<li>South American and Asian countries rates more universal foreign beers.</li>
+								<li>South American countries have controversial opinion about their own beers.</li>
+								<li>The USA are unique: beers from their country are more universal, and they rate foreign beers as controversial.</li>
+								<li>Some Asian and African countries tend to not judge local or foreign beers differently.</li>
+								<li>The mean for controversiality and neutrality is positive. Most countries tend to rate more controversially and neutrally beers of their own countries.</li>
+								<li>Furthermore, the mean score for universality is negative, invalidating any hypothesis of chauvinism.</li>
+							</ul>
+							
+							Note that the mean is not weighted with the amount of beers of a country, each country has the same influence on the mean score.
+							
+							The US produces the most beers, and has the most users, they also tends to grade their own beer as universally. Due to the importance of the US in the dataset we must keep in mind their influence and how it might bias the results. Other users would also drink those universal beers but they would be considered as foreign countries for them.
 						</p>
 					</div>
 				</section>
