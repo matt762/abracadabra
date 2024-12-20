@@ -266,13 +266,13 @@
 							Furthermore the total amount of beer per number of rating is a heavy tail distribution. The impact of the number of ratings on our classification is thus low.
 
 							<h4><strong>Level of the user</strong></h4>
-							It is important to also consider which user made the review, the severity and controversialy might differ between their first and their last review. We choose to users into 3 categories <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/P3.ipynb" target="_blank">[4.4]</a>, novice with less than 20 reviews, enthusiast with less than 800 reviews and connoisseur with more than 800 reviews.
+							It is important to also consider which user made the review, the severity and controversialy might differ between their first and their last review. We choose to separate users into 3 categories <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/P3.ipynb" target="_blank">[4.4]</a>, novice with less than 20 reviews, enthusiast with less than 800 reviews and connoisseur with more than 800 reviews.
 						</p>
 						<div class="image" style="text-align: center;">
 							<img src="images/user_level.png" style="max-width: 100%; height: auto;"/>
 						</div>
 						<p>
-							We can conclude that the connoisseur tends to drink and rate more universal beers and the novice tends to rate more controversial beers. We can also try to state some hypothesis mainly that:
+							We can conclude that the connoisseur tend to drink and rate more universal beers and the novice tend to rate more controversial beers. We can also try to state some hypothesis mainly that:
 							<ul>
 								<li>Connoisseur might know their taste better, as a result they might drink more niche beers that would cater to them.</li>
 								<li>Novice might weight in more importance to a specific attribute, while connoisseur might take various into account. As a result, connoisseur ratings might be more fair and thus closer to the mean</li>
@@ -280,7 +280,7 @@
 						</p>
 						<p>
 							<h4><strong>Country of the users</strong></h4>
-							The following maps illustrates the proportion of labels (neutral, universal or controversial) assigned depending on the users country of origin
+							The following maps illustrates the proportion of labels (neutral, universal or controversial) assigned depending on the users country of origin.
 							It is important to consider that some countries are less represented than others, particularly those where alcohol consumption is not a cultural norm, leading to a very low number of reviews. On the contrary, the USA still represents more than 50% of the reviews.
 							<br>
 							<br>
@@ -327,11 +327,11 @@
 						</p>
 						<p>
 							<h4><strong>Score of comment habit</strong></h4>
-							Finally, we defined a score to measure comment habit. This score indicates whether users tend to rate a higher proportion of local beers or foreign ones. On the map below the score approaches <strong>+1</strong> if
+							Finally, we defined a score to measure comment habit. This score indicates whether users tend to rate a higher proportion of categories (controversial, universal or neutral) of local beers or foreign ones. On the map below the score approaches <strong>+1</strong> if
 							the proportion of universal labels is higher for home beers and goes to <strong>-1</strong> if the
 							proportion is higher for foreign beer.
 							<br>
-							Let \( s_x^{class} \) be the proportion of a category of beers (controversial, universal or neutral) that are from the same country as the user, and let \( s_y^{class} \) be the be the proportion of a category of beers that are from a different country as the user, we obtain that the score per country is defined as:
+							Let \( s_x^{class} \) be the proportion of a category of beers that are from the same country as the user, and let \( s_y^{class} \) be the be the proportion of a category of beers that are from a different country as the user, we obtain that the score per country is defined as:
 							\[ Score^{class} = s_x^{class} - s_y^{class}\]
 							<br>
 							<div class="image-box">
