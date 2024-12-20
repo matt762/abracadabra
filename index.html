@@ -147,7 +147,7 @@
 							</dd>
 						</dl>
 						<p>
-							While this definition is broad and applies to various situations, our analysis narrows it to beers with the most polarised reviews: those who are most likely to spark disagreement, even with a Shakespeare fan in the room.
+							While this definition is broad and applies to various situations, our analysis narrows it to beers with the most polarised reviews: those that are most likely to spark disagreement, even with a Shakespeare fan in the room.
 							We base our analysis on user ratings across appearance, aroma, palate, taste and overall features as well as textual reviews.
 							<br>
 							<br>
@@ -159,7 +159,7 @@
 							To ensure reliable results, we exclude beers with fewer than <strong>25</strong> ratings or reviews.
 							More details on this decision can be found <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/data/README.md" target="_blank">here</a>.
 							<br>
-							<!-- TODO: CHECK LINK! -->
+							<!-- TODO: CHECK LINK AND CHECK THE # RATINGS ! -->
 						</p>
 						<h4><strong>First classification</strong></h4>
 						<p>
@@ -174,8 +174,8 @@
 						<h4><strong>Clustering</strong></h4>
 
 						<p>
-							Recognizing the limitations of a one-dimensional approach, we turned to a clustering method.
-							We chose to use a Gaussian Mixture Model (GMM), factoring in the variances of all five attributes to group beers as either controversial, neutral, or universal.
+							Recognising the limitations of a one-dimensional approach, we turned to a clustering method.
+							We chose to use a Gaussian Mixture Model (GMM), factoring in the variances of all five attributes to group together beers.
 							<br>
 							<br>
 							Using the elbow method on the negative log-likelihood plot, we determined three clusters to be optimal.
@@ -185,7 +185,7 @@
 						</div>
 						<p>
 							<br>
-							The clusters were computed using standardized variances. 
+							The clusters were computed using standardised variances. 
 							They serve as our key metric for controversiality: High variance indicates controversy or disagreement, while low variance suggests a universal appeal.
 							The plot shows scaled variances, where smaller values (near 0) represent low variance, and larger values indicate high variance. 
 							Based on this, we define the clusters as follows:
@@ -194,8 +194,8 @@
 							<li>Cluster 0 : Controversial beers, representing 8.96% of the beers.</li>
 							<li>Cluster 1 : Universal beers, representing 41.41% of the beers.</li>
 							<li>Cluster 2 : Neutral beers, representing 49.63% of the beers.</li>
-						</ul>
-
+						</ul> 
+						<!-- TODO: CHECK THE NUMBERS ! -->
 						<br>
 
 						<h2>Extracting insights from textual reviews</h2>
