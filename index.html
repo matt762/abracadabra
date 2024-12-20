@@ -237,12 +237,9 @@
 						<p>
 							<h4><strong>Alcohol By Volume</strong></h4>
 
-							Alcohol By Volume (ABV) is a key attribute of beer, influencing its taste and aroma. 
-							We found, as expected, that extreme values of ABV are related to the controversilty of the beer. 
-							Moreover, the most common beers (with ABV between 4% and 10%) are the most universal.
-							One thing interesting is that in these universal beers, the more ABV, the more universal the beer is. 
-							This would mean that people from this website tends to truly agree on relatively strong beers (between 7% and 10%), whether they like it or not.
-							The following plot shows the distribution of beers and classification.
+							Alcohol By Volume (ABV) is a key attribute of beer, influencing its taste. 
+							We found, as expected, that extreme values of ABV are related to the controversilty of a beer. 
+							For the next part we choose to not plot the beers beyond 20% ABV as they are too few to be significant, 
 						</p>
 						<div class="image" style="text-align: center;">
 							<img src="images/abv.png" style="max-width: 100%; height: auto;"/>
@@ -250,10 +247,14 @@
 
 						----- VALENTIN
 						<p>
+							Most of the common beers (with an ABV between 2.5% and 7.5%) are neutral and some are controversial.
+							Interestingly, the stronger beers (between 6% and 16%) are more likely to be universal or neutral.
+							This would mean that the ratings of the users tends to converge on relatively strong beers.
+							
 							By analysing the evolution of the proportion of the classification of the beers per level of alcohol by volume we can extract two main points:
 							<ul>
-								<li>The proportion of universal beers increases with the alcohol by volume, whereas the proportion of controversial and neutral beers decreases.</li>
-								<li>The more alcohol by volume the less beers there is after a peak around 5%. This leads to oscillations of the proportions when there is not enough beers left. After a certain level we could conclude that there are no universal beers left, however the low number of beers at this level is unsuficient to conclude this.</li>
+								<li>Beers with a low abv (<5%) tends to be controversial or neutral, beers with a very high abv (>15%) also tends to shows this behaviour.</li>
+								<li>After a peak at around 5%, the more alcohol by volume the less beers there is.</li>
 							</ul>
 							<h4><strong>Number of ratings per beer</strong></h4>
 						</p>
