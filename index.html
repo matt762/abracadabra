@@ -186,7 +186,7 @@
 							<br>
 							The clusters were computed using standardised variances. 
 							They serve as our key metric for controversiality: High variance indicates controversy or disagreement, while low variance suggests a universal appeal.
-							The plot shows scaled variances, where smaller values (near 0) represent low variance, and larger values indicate high variance. For each subplot, the variance is represented by the distance from the origin of a point.
+							The plot shows scaled variances, where smaller values represent low variance, and larger values indicate high variance.
 							Based on this, we define the clusters as follows:
 						</p>
 						<ul>
@@ -209,9 +209,9 @@
 							With this new information, we attempted the Gaussian Mixture Model again, this time incorporating sentiment classifications.
 							Three models were constructed, each categorizes beers into three categories (Controversial, Universal and Neutral), but differs in the data used:
 							<ul>
-								<li><strong>Model 1</strong> is computed for all ratings, computed before.</li>
-								<li><strong>Model 2</strong> is computed only for ratings with text, accounting for sentiment label.</li>
-								<li><strong>Model 3</strong> is computed only for ratings with text, not accounting for sentiment label.</li>
+								<li><strong>Classifier 1</strong> uses all ratings, as before.</li>
+								<li><strong>Classifier 2</strong> uses only ratings having textual reviews, accounting for sentiment label.</li>
+								<li><strong>Classifier 3</strong> uses only ratings having textual reviews, not accounting for sentiment label.</li>
 							</ul>
 						</p>
 						<div class="image" style="text-align: center;">
@@ -223,14 +223,14 @@
 							Despite the additional information provided by sentiment analysis, the results showed that the similarity between
 							the models was high, suggesting that sentiment analysis did not significantly alter the classification.
 							Considering the lack of improvement in classification accuracy, the loss of data and the uncertainty added by the sentiment analysis,
-							we will follow without using the sentiment analysis.
+							we will pursue without using the sentiment analysis.
 						</p>
 						<!-- TODO: C'est une si petite loss de data ???? ! -->
 
-						<h2>Exploring the definition of controversiality</h2>
+						<h2>Analysing the potential results of controversiality</h2>
 
 						<p>
-							Now that we have a good classification for the controversiality of the beers, we can start to explore the data to find the reasons behind it.
+							Now that we have a satisfying classification for the controversiality of the beers, we can start to explore the data to find the reasons behind it.
 						</p>
 
 						<p>
@@ -346,8 +346,8 @@
 							<h4><strong>Score of comment habit</strong></h4>
 							Finally, we defined a score to measure comment habit. This score indicates whether users from
 							a specific country tend to rate a higher proportion of beers
-							coming from their own country or from foreign ones. On the map below the score approaches one if,
-							for example, the proportion of universal labels is higher for home beers and tends to -1 if the
+							coming from their own country or from foreign ones. On the map below the score approaches 1 if
+							the proportion of universal labels is higher for home beers and tends to -1 if the
 							proportion is higher for foreign beer.
 							<br>
 							<br>
@@ -375,14 +375,13 @@
 							<h2>Conclusion</h2>
 						</header>
 						<p>
-							Through various analytical approaches,  we did not identify a straightforward separation between the different features.
+							Through preliminary approaches, we did not identify a straightforward separation between the different classes.
 							An advanced clustering method (GMM) revealed three distinct clusters, enabling the classification of beers into the universal, neutral and controversial categories.
 							While the sentiment analysis provided additional insights, it did not justify the cost of reducing the dataset size.
 							Our analysis also highlighted a positive correlation between alcohol by volume and the proportion of universal beers
 							while the number of ratings showed no significant effect on these proportions.
 							Additionally, higher user levels  (from novice to enthusiast to connoisseur) were associated with an increased proportion of universal beer labels.
 							Furthermore, the United States of America largely influenced the impact of the origin of the beers and users, due to its significant representation in the dataset.
-
 							While we acknowledge that the threshold strongly influences our clusters, subsequent analysis suggests that the effect on them may not be as strong on the last couple of analysis.
 						</p>
 					</div>
@@ -433,12 +432,12 @@
 							<h2>To go further</h2>
 						</header>
 						<p>
-							Our study revealed that our clusters where sensitive to the number of beers used. Increasing
+							Our study revealed that our clusters were sensitive to the number of beers used. Increasing
 							the number of beers would improve the robustness of the clusters. However, achieving this requires
 							addressing the impact of variance fluctuations in cases with a low number of ratings.
 							While we chose a threshold which marks the beginning of a plateau, we observed that the variance still slowly decreases over
 							the number of ratings. Therefore, developing a method to effectively weight the number of ratings of our analysis would improve the robustness of our analysis,
-							enabling us to have even more precise results.
+							enabling us to have even more reliable results.
 						</p>
 						<p>
 							Another way to delve deeper into understanding why a beer might be controversial is by analyzing
@@ -448,8 +447,6 @@
 							we can extract relevant themes from the comments, such as taste, color, and other attributes.
 							This approach not only allows us to determine whether the sentiment is positive or negative but
 							also uncovers the underlying reasons behind these sentiments.
-						</p>
-						<p>
  							Although this method of analysis is time-consuming, it offers the potential to uncover deeper insights into what makes a beer controversial.
 						</p>
 					</div>
