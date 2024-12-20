@@ -112,7 +112,7 @@
 							<img src="images/dataset_summary.png" style="max-width: 100%; height: auto;"/>
 						</div>
 						<p>
-							This dataset provides a rich source of information for our analysis. Notably, approximately <strong>90% of the beers have at least one review</strong>, ensuring that our findings will be both meaningful and insightful.
+							This dataset provides a rich source of information for our analysis. Notably, approximately <strong>90% of the beers have at least one review</strong>, ensuring that the research will be both meaningful and insightful.
 							For this project, we will focus solely on these beers.
 						</p>
 						<p>
@@ -124,7 +124,7 @@
 						<!-- TODO: How do we change "number of ratings" to "number of reviews"? -->
 						<p>
 							Reviews from both websites follow a similar structure: users rate the appearance, aroma, palate, and taste of each beer, as well as provide an overall grade.
-							To standardize the data, we converted all ratings to a unified 1-to-5 scale, as this range is the most widely used. While differences in granularity between the datasets remain, these will be further explored in our analysis.
+							To standardize the data, we converted all ratings to a unified 1-to-5 scale, as this range is the most widely used. Please note that some of the scaled ratings have a different resolution.
 						</p>
 					</div>
 				</section>
@@ -149,18 +149,17 @@
 						<p>
 							While this definition is broad and applies to various situations, our analysis narrows it to beers with the most polarised reviews: those that are most likely to spark disagreement, even with a Shakespeare fan in the room.
 							We base our analysis on user ratings across appearance, aroma, palate, taste and overall features as well as textual reviews.
-							<br>
-							<br>
-							We begin by analysing the variance in user ratings, which describes the level of disagreement around the average score.
-            				Since variance is dimension-independent, it provides a consistent measure across attributes, relying uniquely on the given ratings.
-							<br>
-							<br>
-							We also noticed that beers with fewer ratings tend to show higher variability (e.g., two extreme opinions).
-							To ensure reliable results, we exclude beers with fewer than <strong>25</strong> ratings or reviews.
-							More details on this decision can be found <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/data/README.md" target="_blank">here</a>.
-							<br>
-							<!-- TODO: CHECK LINK AND CHECK THE # RATINGS ! -->
 						</p>
+						<h4><strong>Preliminary considerations</strong></h4>
+						<p>
+							The metrics used for this analyis of user ratings is the variance, which describes the level of disagreement around the average score.
+							Since variance is dimension-independent, it provides a consistent measure across attributes, relying uniquely on the given ratings.
+							<br>
+							<br>
+							To ensure reliable results, we exclude beers with fewer than <strong>30</strong> ratings or reviews.
+							More details on this decision can be found <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/data/README.md" target="_blank">here</a>, as beers with lower ratings may show higher variance (e.g.only two extreme opinions).
+						</p>
+						<!-- TODO: CHECK LINK AND CHECK THE # RATINGS ! -->
 						<h4><strong>First classification</strong></h4>
 						<p>
 							With the data cleaned, the first step in classifying beers as controversial or not involves analyzing
