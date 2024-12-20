@@ -146,14 +146,14 @@
 							<br>
 							<br>
 							To ensure reliable results, we exclude beers with fewer than <strong>30</strong> ratings or reviews.
-							More details on this decision can be found <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/data/" target="_blank">here</a>, as beers with lower ratings may show higher variance (e.g.only two extreme opinions).
+							More details on this decision can be found <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/P3.ipynb" target="_blank">here</a>, as beers with lower ratings may show higher variance (e.g.only two extreme opinions).
 						</p>
 						<h4><strong>First classification</strong></h4>
 						<p>
 							With the data cleaned, the first step in classifying beers as controversial or not involves analysing
 							the variances of each attribute. It may seem logical to use the variance of the overall grade, as it reflects a combination of each attribute.
 							However, setting a threshold on this variance to classify beers presents challenges.
-							A <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/data/" target="_blank">deeper analysis</a> revealed
+							A <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/P3.ipynb" target="_blank">deeper analysis</a> revealed
 							that using an arbitrary threshold primarily highlighted taste as the most polarizing factor.
 							We believe that relying solely on a single parameter oversimplifies controversiality, and that it is inherently multi-dimensional and influenced by the interaction of all attributes.
 						</p>
@@ -222,7 +222,7 @@
 						<p>
 							<h4><strong>Main attributes</strong></h4>
 
-							First, we analyse the distribution of the variances of the main attributes for each class.
+							We begin by analysing the distribution of the variances of the main attributes for each class.
 						</p>
 						<div class="image" style="text-align: center;">
 							<img src="images/varianceaftergmmdistrib.png" style="max-width: 100%; height: auto;"/>
@@ -247,7 +247,7 @@
 							<img src="images/abv.png" style="max-width: 100%; height: auto;"/>
 						</div>
 						<p>
-							By analysing the evolution of the proportion of the classification of the beers per level of alcohol by volume we can extract that:
+							By analysing the evolution of the proportion of the classification of the beers per level of alcohol by volume we can extract the following:
 							<ul>
 								<li>After a peak at around 5%, the more alcohol by volume the less beers there are.</li>
 								<li>Most of the common beers (with an ABV between 2.5% and 7.5%) are neutral and some are controversial.</li>
@@ -272,7 +272,7 @@
 							<img src="images/user_level.png" style="max-width: 100%; height: auto;"/>
 						</div>
 						<p>
-							We can conclude that the connoisseur tend to drink and rate more universal beers and the novice tend to rate more controversial beers. We can also try to state some hypothesis mainly that:
+							We can conclude that the connoisseur tend to drink and rate more universal beers and the novice tend to rate more controversial beers. We can also try to state some hypothesis:
 							<ul>
 								<li>Connoisseur might know their taste better, as a result they might drink more niche beers that would cater to them.</li>
 								<li>Novice might weight in more importance to a specific attribute, while connoisseur might take various into account. As a result, connoisseur ratings might be more fair and thus closer to the mean</li>
