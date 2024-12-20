@@ -92,8 +92,7 @@
 						<p>
 							To begin this analysis, we first uncovered an interesting pattern: some breweries, beers, and users were present in both <a href="https://www.ratebeer.com/" target="_blank">RateBeer</a> and <a href="https://www.beeradvocate.com/" target="_blank">BeerAdvocate</a>.	We also found instances where a single brewery in one dataset corresponded to multiple entries in the other.
 							We merged the two datasets into a single unified <a href="https://drive.google.com/drive/folders/1QlduSz83RzRv58ec6sGmJ7K6TlWlWi44" target="_blank">one</a> encompassing beers, breweries, users, and reviews, with consistent ID  matching across all features.
-							More details on how the datasets were merged can be found <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/data/README.md" target="_blank">here</a>.
-						<!-- TODO: CHECK LINK! -->
+							More details on how the datasets were merged can be found <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/data/" target="_blank">here</a>.
 						</p>
 						<p>
 							With the data now organised into a more accessible format, we can begin examining its core content. We start by looking at some key numbers.
@@ -111,8 +110,7 @@
 							We decided not to rebalance the dataset, as doing so would have excluded many brews and reviews, that are still relevant to our analysis.
     						Below is a visualisation highlighting the 20 countries with the most reviews in our dataset.
 						</p>
-						<div class="flourish-embed flourish-hierarchy" data-src="visualisation/20776364"><h3 style="text-align: center;"><strong>Top countries by number of beer ratings</strong></h3><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20776364/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
-						<!-- TODO: How do we change "number of ratings" to "number of reviews"? -->
+						<div class="flourish-embed flourish-hierarchy" data-src="visualisation/20776364"><h3 style="text-align: center;"><strong>Top countries by number of beer reviews</strong></h3><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20776364/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
 						<p>
 							Reviews from both websites follow a similar structure: users rate the appearance, aroma, palate, and taste of each beer, as well as provide an overall grade.
 							To standardize the data, we converted all ratings to a unified 1-to-5 scale, as this range is the most widely used. Please note that some of the scaled ratings have a different resolution.
@@ -148,15 +146,14 @@
 							<br>
 							<br>
 							To ensure reliable results, we exclude beers with fewer than <strong>30</strong> ratings or reviews.
-							More details on this decision can be found <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/data/README.md" target="_blank">here</a>, as beers with lower ratings may show higher variance (e.g.only two extreme opinions).
+							More details on this decision can be found <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/data/" target="_blank">here</a>, as beers with lower ratings may show higher variance (e.g.only two extreme opinions).
 						</p>
-						<!-- TODO: CHECK LINK AND CHECK THE # RATINGS ! -->
 						<h4><strong>First classification</strong></h4>
 						<p>
 							With the data cleaned, the first step in classifying beers as controversial or not involves analysing
 							the variances of each attribute. It may seem logical to use the variance of the overall grade, as it reflects a combination of each attribute.
 							However, setting a threshold on this variance to classify beers presents challenges.
-							A <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/data/README.md" target="_blank">deeper analysis</a> revealed
+							A <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/data/" target="_blank">deeper analysis</a> revealed
 							that using an arbitrary threshold primarily highlighted taste as the most polarizing factor.
 							We believe that relying solely on a single parameter oversimplifies controversiality, and that it is inherently multi-dimensional and influenced by the interaction of all attributes.
 						</p>
@@ -168,7 +165,7 @@
 							We chose to use a Gaussian Mixture Model (GMM), factoring in the variances of all five attributes, to group together beers.
 							<br>
 							<br>
-							Using the elbow method on the negative log-likelihood plot, we determined <strong>3</strong> clusters to be optimal.
+							Using the elbow method on the negative log-likelihood plot, we determined <strong>3 clusters</strong> to be optimal.
 						</p>
 						<div class="image" style="text-align: center;">
 							<img src="images/gmm_label.png" style="max-width: 100%; height: auto;"/>
@@ -181,11 +178,10 @@
 							Based on this, we define the clusters as follows:
 						</p>
 						<ul>
-							<li>Cluster 0 : Controversial beers, representing 8.96% of the beers.</li>
-							<li>Cluster 1 : Universal beers, representing 41.41% of the beers.</li>
-							<li>Cluster 2 : Neutral beers, representing 49.63% of the beers.</li>
+							<li>Cluster 0 : Controversial beers, representing 9.81% of the beers.</li>
+							<li>Cluster 1 : Universal beers, representing 37.13% of the beers.</li>
+							<li>Cluster 2 : Neutral beers, representing 53.06% of the beers.</li>
 						</ul> 
-						<!-- TODO: CHECK THE NUMBERS ! -->
 						<br>
 
 						<h2>Extracting insights from textual reviews</h2>
@@ -216,7 +212,6 @@
 							Considering the lack of improvement in classification accuracy, the loss of data and the uncertainty added by the sentiment analysis,
 							we will pursue without using the sentiment analysis.
 						</p>
-						<!-- TODO: C'est une si petite loss de data ???? ! -->
 
 						<h2>Analysing the potential results of controversiality</h2>
 
@@ -364,13 +359,15 @@
 							<h2>Conclusion</h2>
 						</header>
 						<p>
-							Our initial exploration of the dataset did not reveal a clear separation between user levels based on their beer preferences. 
+							Our initial exploration of the dataset did not reveal a clear separation between beers. 
 							Employing advanced clustering methods (GMM), we identified three primary clusters: universal, neutral, and controversial beers.
 							Sentiment analysis was conducted, but its marginal benefits did not outweigh the cost of reducing the dataset size.
 							<br>
-							Further analysis revealed that the ABV plays a strong role, whith the most controversial and neutral beers having the highest and lowest ABV, and a consencus on relatively strong beers.
+							Further analysis revealed that the ABV plays a strong role, with the most controversial and neutral beers having the highest and lowest ABV, and a consencus on relatively strong beers.
 							Interestingly, user expertise levels (novice, enthusiast, connoisseur) exhibited a strong association with the proportion of universal beers, with connoisseurs favoring them most.
 							Geographical data highlighted the outsized influence of the USA due to its significant representation in the dataset, affecting the observed patterns in beer and user origins.
+							<br>
+							Just as Shakespeare's era recognized beer's cultural significance, our analysis reveals that the appreciation of beer continues to evolve, shaped by expertise, regional influences, and the complex interplay of brewing characteristics.
 						</p>
 
 						<br>
