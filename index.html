@@ -210,7 +210,7 @@
 							<img src="images/similarity_sentiment.png" style="max-width: 100%; height: auto;"/>
 						</div>
 						<p>
-							Restricting the data to only reviews with text results in a <strong>13% loss</strong> in the dataset size.
+							Restricting the data to only reviews with text results in a <strong>14% loss</strong> in the dataset size.
 							Despite the additional information provided by sentiment analysis, the results showed that the similarity between
 							the models was high, suggesting that sentiment analysis did not significantly alter the classification.
 							Considering the lack of improvement in classification accuracy, the loss of data and the uncertainty added by the sentiment analysis,
@@ -366,23 +366,37 @@
 							<h2>Conclusion</h2>
 						</header>
 						<p>
-							Through preliminary approaches, we did not identify a straightforward separation between the different classes.
-							An advanced clustering method (GMM) revealed three distinct clusters, enabling the classification of beers into the universal, neutral and controversial categories.
-							While the sentiment analysis provided additional insights, it did not justify the cost of reducing the dataset size.
-							Our analysis also highlighted a positive correlation between alcohol by volume and the proportion of universal beers
-							while the number of ratings showed no significant effect on these proportions.
-							Additionally, higher user levels  (from novice to enthusiast to connoisseur) were associated with an increased proportion of universal beer labels.
-							Furthermore, the United States of America largely influenced the impact of the origin of the beers and users, due to its significant representation in the dataset.
-							While we acknowledge that the threshold strongly influences our clusters, subsequent analysis suggests that the effect on them may not be as strong on the last couple of analysis.
+							Our initial exploration of the dataset did not reveal a clear separation between user levels based on their beer preferences. 
+							Employing advanced clustering methods (GMM), we identified three primary clusters: universal, neutral, and controversial beers.
+							Sentiment analysis was conducted, but its marginal benefits did not outweigh the cost of reducing the dataset size.
+							<br>
+							Further analysis revealed thaht the appearance and palate are a positive correlation between alcohol by volume (ABV) and the proportion of universal beers, while the number of ratings showed no significant impact on these proportions.
+							Interestingly, user expertise levels (novice, enthusiast, connoisseur) exhibited a strong association with the proportion of universal beers, with connoisseurs favoring them most.
+							Geographical data highlighted the outsized influence of the USA due to its significant representation in the dataset, affecting the observed patterns in beer and user origins.
+						</p>
+
+						<br>
+						<h2>To go further</h2>
+						<p>
+							Our study revealed that our clusters were sensitive to the number of beers used. Increasing
+							the number of beers would improve the robustness of the clusters. However, achieving this requires
+							addressing the impact of variance fluctuations in cases with a low number of ratings.
+							While we chose a threshold which marks the beginning of a plateau, we observed that the variance still slowly decreases over
+							the number of ratings. Therefore, developing a method to effectively weight the number of ratings of our analysis would improve the robustness of our analysis,
+							enabling us to have even more reliable results.
+						</p>
+						<p>
+							Another way to delve deeper into understanding why a beer might be controversial is by analysing
+							qualitative reviews. While quantitative data analysis is already complex, the true insights behind
+							a 7/10 rating, for instance, lie within the qualitative feedback. By using various analysis methods detailed in
+							the <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/src/scripts/embeddings/README.md" target="_blank">GitHub</a>,
+							we can extract relevant themes from the comments, such as taste, color, and other attributes.
+							This approach not only allows us to determine whether the sentiment is positive or negative but
+							also uncovers the underlying reasons behind these sentiments.
+ 							Although this method of analysis is time-consuming, it offers the potential to uncover deeper insights into what makes a beer controversial.
 						</p>
 					</div>
 				</section>
-
-				<!-- PLOT EXAMPLE
-				<div class="iframe-container">
-					<iframe src="assets/plots/aabv_plot.html" class="responsive-iframe"></iframe>
-				</div>
-				-->
 
 				<!-- Team Section -->
 					<section class="wrapper style1 align-center">
@@ -417,31 +431,6 @@
 							</div>
 						</div>
 					</section>
-				<section class="wrapper style1 center">
-					<div class="inner">
-						<header>
-							<h2>To go further</h2>
-						</header>
-						<p>
-							Our study revealed that our clusters were sensitive to the number of beers used. Increasing
-							the number of beers would improve the robustness of the clusters. However, achieving this requires
-							addressing the impact of variance fluctuations in cases with a low number of ratings.
-							While we chose a threshold which marks the beginning of a plateau, we observed that the variance still slowly decreases over
-							the number of ratings. Therefore, developing a method to effectively weight the number of ratings of our analysis would improve the robustness of our analysis,
-							enabling us to have even more reliable results.
-						</p>
-						<p>
-							Another way to delve deeper into understanding why a beer might be controversial is by analysing
-							qualitative reviews. While quantitative data analysis is already complex, the true insights behind
-							a 7/10 rating, for instance, lie within the qualitative feedback. By using various analysis methods detailed in
-							the <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/src/scripts/embeddings/README.md" target="_blank">GitHub</a>,
-							we can extract relevant themes from the comments, such as taste, color, and other attributes.
-							This approach not only allows us to determine whether the sentiment is positive or negative but
-							also uncovers the underlying reasons behind these sentiments.
- 							Although this method of analysis is time-consuming, it offers the potential to uncover deeper insights into what makes a beer controversial.
-						</p>
-					</div>
-				</section>
 
 
 				<!-- Footer -->
