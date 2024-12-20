@@ -251,8 +251,6 @@
 						<div class="image" style="text-align: center;">
 							<img src="images/abv.png" style="max-width: 100%; height: auto;"/>
 						</div>
-
-						----- VALENTIN
 						<p>
 							By analysing the evolution of the proportion of the classification of the beers per level of alcohol by volume we can extract that:
 							<ul>
@@ -263,45 +261,18 @@
 									This would mean that the ratings of the users tends to converge on relatively strong beers.</li>
 							</ul>
 							<h4><strong>Number of ratings per beer</strong></h4>
-						</p>
-						<div class="image" style="text-align: center;">
-							<img src="images/number_of_ratings.png" style="max-width: 100%; height: auto;"/>
-						</div>
-						<p>
-							The study of the number of rating didn't prove as fruitful in gain of information. The number of beers slowly decreases with the number of ratings. Finally the universal and controversial beers proportion slightly increase, however those are two opposite clusters and does not make it more easy to find a trend.
-
-							<h4><strong>Level of the user</strong></h4>
+							It is important to also consider which user made the review, the severity and controversialy might differ between their first and their last review. We choose to <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/analysis_final.ipynb" target="_blank">classify</a> users into 3 categories, novice with less than 20 reviews, enthusiast with less than 800 reviews and connoisseur with more than 800 reviews.
 						</p>
 						<div class="image" style="text-align: center;">
 							<img src="images/user_level.png" style="max-width: 100%; height: auto;"/>
 						</div>
 						<p>
-							For this data analysis study we had the fantasy where we believed that the depending of the level of the users, he would grade beers differently. By level we mean that a user is first classified as novice, after having made 20 ratings he becomes an enthusiast and after 800 ratings he reaches the level of connoisseur. From the study we clearly see that the proportion of controversial and neutral rated beers decreases. The more a user rates beer the more he starts to grade universal beers. One would need to study the graders behavior to understand why they increase the proportion of universal beers. 
+							We can conclude that the connoisseur tends to drink and rate more universal beers and the novice tends to rate more controversial beers. We can also try to state some hypothesis mainly that:
+							<ul>
+								<li>Connoisseur might know their taste better, as a result they might drink more beer that would cater to them.</li>
+								<li>Novice might weight in more importance to a specific attribute, while connoisseur might take various into account. As a result, connoisseur ratings might be more fair and thus closer to the mean</li>
+								<li>The higher proportion of universal in the connoisseur might be due to the <a href=https://dlab.epfl.ch/people/west/pub/Lederrey-West_WWW-18.pdf>herding effect</a>)</li>. If the first few ratings are made by connoisseur, then the novice users might copy their opinions.
 						</p>
-						----- VALENTIN
-						<p>
-							<h4><strong>Number of reviews</strong></h4>
-							
-							We performed a similar analysis for the number of reviews per beer, showing that independently of the number of reviews, the distribution of the controversiality of the beers remains the same.
-							From our analysis the amount of rating is negligibly correlated with the increase or decrease between the proportion of the beers classification.
-							Furthermore the total amount of beer per rating is a heavy tail distribution. This lead us to believe that the number of rating impact on our analysis after the 
-							threshold we set is smaller.
-						</p>
-						<div class="image" style="text-align: center;">
-							<img src="images/number_users.png" style="max-width: 100%; height: auto;"/>
-						</div>
-						<p>
-							<h4><strong>Expertise level of the user</strong></h4>
-							It is important to also consider which user made the review, the severity and controversialy is probably different at the first review compared to the 5,000th one.
-							We classified the user in three categories: novice, enthusiasts and connoisseurs. 
-							The more advanced an user is, the less there reviews are controversial and neutral. However, the proportion of universal ratings increase.
-							This is interesting as it may show an effect from other reviews, or on the other side, a bias of expertise as reviews from connoisseurs may be taken more seriously than beginners.
-							One could link this with a previous finding and hypothesise that the connoisseur are more subject to drink higher level of alcohol by volume beers, but this would need a study of this theory.
-						</p>
-						<div class="image" style="text-align: center;">
-							<img src="images/connoisseurs.png" style="max-width: 100%; height: auto;"/>
-						</div>
-
 						<p>
 							<h4><strong>Country of the users</strong></h4>
 							With approximately half of the reviews originating from the U.S.A., the following maps illustrates the frequency of labels (neutral, universal or controversial) assigned per country by the user from those respective regions.
