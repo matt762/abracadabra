@@ -261,16 +261,14 @@
 									This would mean that the ratings of the users tends to converge on relatively strong beers.</li>
 							</ul>
 							<h4><strong>Number of ratings per beer</strong></h4>
-							We performed a similar analysis for the number of reviews per beer, showing that independently of the number of reviews, the distribution of the controversiality of the beers remains the same.
-							From our analysis the amount of rating is negligibly correlated with the increase or decrease between the proportion of the beers classification.
-							Furthermore the total amount of beer per rating is a heavy tail distribution. This lead us to believe that the number of rating impact on our analysis after the 
-							threshold we set is smaller.
 						</p>
 						<div class="image" style="text-align: center;">
 							<img src="images/number_of_ratings.png" style="max-width: 100%; height: auto;"/>
 						</div>
 						<p>
-							The study of the number of rating didn't prove as fruitful in gain of information. The number of beers slowly decreases with the number of ratings. Finally the universal and controversial beers proportion slightly increase, however those are two opposite clusters and does not make it more easy to find a trend.
+
+							We performed a similar analysis for the number of reviews per beer, showing that independently of the number of reviews, the proportion between the cluster remains the same.
+							Furthermore the total amount of beer per number of rating is a heavy tail distribution. The impact of the number of ratings on our classification is thus low.
 
 							<h4><strong>Level of the user</strong></h4>
 							It is important to also consider which user made the review, the severity and controversialy might differ between their first and their last review. We choose to users into 3 categories <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/P3.ipynb" target="_blank">[4.4]</a>, novice with less than 20 reviews, enthusiast with less than 800 reviews and connoisseur with more than 800 reviews.
@@ -370,7 +368,7 @@
 							Employing advanced clustering methods (GMM), we identified three primary clusters: universal, neutral, and controversial beers.
 							Sentiment analysis was conducted, but its marginal benefits did not outweigh the cost of reducing the dataset size.
 							<br>
-							Further analysis revealed thaht the appearance and palate are a positive correlation between alcohol by volume (ABV) and the proportion of universal beers, while the number of ratings showed no significant impact on these proportions.
+							Further analysis revealed that the ABV plays a strong role, whith the most controversial and neutral beers having the highest and lowest ABV, and a consencus on relatively strong beers.
 							Interestingly, user expertise levels (novice, enthusiast, connoisseur) exhibited a strong association with the proportion of universal beers, with connoisseurs favoring them most.
 							Geographical data highlighted the outsized influence of the USA due to its significant representation in the dataset, affecting the observed patterns in beer and user origins.
 						</p>
