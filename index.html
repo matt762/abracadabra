@@ -76,18 +76,9 @@
 						<h2>Research questions</h2>
 						<p>The following key questions define how this study is structured and what are the main topic that we will explore.</p>						
 						<ul class="default" style="margin-left: 50px;">
-							<li>How can we define and classify beer controversiality, and which numerical attributes best predict it? Can we use the textual review to enhance our classification?</li>
-							<li>Are there features explaining controversiality, and do they depend on the beer itself? </li>
-							------------------------------------------------------------------------------------------------------------
-							<li>How can we define controversiality and can we distinguish these two classes effectively?</li>
-							<br>
-							<li>Is the text review coherent with the numerical grade given by the user ? Can we use this text to enhance our controversiality definition ?</li>
-							<br>
-							<li>Which attributes, such as aroma, appearance, palate, and taste, are most associated with a beer being perceived as controversial?</li>
-							<br>
-							<li>Are certain regions more likely to produce controversial beers or to have distinct, less popular opinions? Are locally brewed beers rated more controversially compared to foreign ones?</li>
-							<br>
-							<li>Does the number of reviews made by the reviewer contribute to controversial ratings? Does the origin of the rater have an impact on the rating?</li>
+							<li>How can we define and classify beer controversiality?</li>
+							<li>Can we use the textual review to enhance our classification?</li>
+							<li>Are there features explaining controversiality? </li>
 						</ul>
 					</div>
 				</section>
@@ -231,6 +222,23 @@
 
 						<p>
 							Now that we have a satisfying classification for the controversiality of the beers, we can start to explore the data to find the reasons behind it.
+						</p>
+
+						<p>
+							<h4><strong>Main attributes</strong></h4>
+
+							First, we analyse the distribution of the variances of the main attributes for each class.
+						</p>
+						<div class="image" style="text-align: center;">
+							<img src="images/abv.png" style="max-width: 100%; height: auto;"/>
+						</div>
+						<p>
+							<strong>Appearance</strong> and <strong>palate</strong> exhibit the highest mean variance across all classes, suggesting they may contribute the most to the controversiality of a beer. 
+							However, it is important to note that these scaled attributes have a lower resolution in the RateBeer dataset. 
+							As a result, it amplifies the variance of these attributes.
+							<br>
+							<br>
+							The plot also shows that there are no extreme outliers for universal and neutral class. This suggests that the GMM classification effectively separates beers with fewer controversial attributes and performs reliably in the classification.
 						</p>
 
 						<p>
@@ -401,27 +409,27 @@
 								<section>
 									<span class="icon style2 major fa-user"></span>
 									<h3>Alan Wicht</h3>
-									<p>Alan is a data scientist.</p>
+									<p>Robotics</p>
 								</section>
 								<section>
 									<span class="icon style2 major fa-user"></span>
 									<h3>Gustave Lapierre</h3>
-									<p>Gustave is a data scientist.</p>
+									<p>Mechanical Engineering</p>
 								</section>
 								<section>
 									<span class="icon style2 major fa-user"></span>
 									<h3>Jehan Piaget</h3>
-									<p>Jehan is a data scientist.</p>
+									<p>Robotics</p>
 								</section>
 								<section>
 									<span class="icon style2 major fa-user"></span>
 									<h3>Mattéo Fiore</h3>
-									<p>Mattéo is a data scientist and webmaster.</p>
+									<p>Robotics</p>
 								</section>
 								<section>
 									<span class="icon style2 major fa-user"></span>
 									<h3>Valentin Perret</h3>
-									<p>Valentin is a data scientist.</p>
+									<p>Robotics</p>
 								</section>
 							</div>
 						</div>
