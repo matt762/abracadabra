@@ -90,7 +90,7 @@
 						</header>
 
 						<p>
-							To begin this analysis, we first uncovered an interesting pattern: some breweries, beers, and users were present in both <a href="https://drive.google.com/drive/folders/1hhNM7Hc2ZrOtNWaflbaVKFFWpyVeiSbw" target="_blank">RateBeer</a> and <a href="https://drive.google.com/drive/folders/1fwgH0RK4vAZ5i9HI-rPUbXNdC09qrss-" target="_blank">BeerAdvocate</a>.	We also found instances where a single brewery in one dataset corresponded to multiple entries in the other.
+							To begin this analysis, we first uncovered an interesting pattern: some breweries, beers, and users were present in both <a href="https://www.ratebeer.com/" target="_blank">RateBeer</a> and <a href="https://www.beeradvocate.com/" target="_blank">BeerAdvocate</a>.	We also found instances where a single brewery in one dataset corresponded to multiple entries in the other.
 							We merged the two datasets into a single unified <a href="https://drive.google.com/drive/folders/1QlduSz83RzRv58ec6sGmJ7K6TlWlWi44" target="_blank">one</a> encompassing beers, breweries, users, and reviews, with consistent ID  matching across all features.
 							More details on how the datasets were merged can be found <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/data/README.md" target="_blank">here</a>.
 						<!-- TODO: CHECK LINK! -->
@@ -155,7 +155,7 @@
 						<p>
 							With the data cleaned, the first step in classifying beers as controversial or not involves analysing
 							the variances of each attribute. It may seem logical to use the variance of the overall grade, as it reflects a combination of each attribute.
-							However, setting a threshold for this variance presents challenges.
+							However, setting a threshold on this variance to classify beers presents challenges.
 							A <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/data/README.md" target="_blank">deeper analysis</a> revealed
 							that using an arbitrary threshold primarily highlighted taste as the most polarizing factor.
 							We believe that relying solely on a single parameter oversimplifies controversiality, and that it is inherently multi-dimensional and influenced by the interaction of all attributes.
@@ -177,7 +177,7 @@
 							<br>
 							The clusters were computed using standardised variances. 
 							They serve as our key metric for controversiality: High variance indicates controversy or disagreement, while low variance suggests a universal appeal.
-							The plot shows scaled variances, where smaller values represent low variance, and larger values indicate high variance.
+							The plot shows standardised variances, where smaller values represent low variance, and larger values indicate high variance.
 							Based on this, we define the clusters as follows:
 						</p>
 						<ul>
@@ -358,6 +358,8 @@
 							the proportion of universal labels is higher for home beers and tends to -1 if the
 							proportion is higher for foreign beer.
 							<br>
+							Let \( s_x^{class} \) be the frequency of a certain class for beers of the country similar as the country of origin of the user, and let \( s_y^{class} \) be the frequency for a certain class for beers of the country different to the country of origin of the user, we obtain that the score per country is defined as:
+							\[ Score^{class} = s_x^{class} - s_y^{class}\]
 							<br>
 							<div class="image-box">
 								<select id="imageSelector3" onchange="switchImage3()">
