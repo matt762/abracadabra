@@ -105,7 +105,7 @@
 						<!-- TODO: CHECK LINK! -->
 						</p>
 						<p>
-							With the data now organized into a more accessible format, we can begin examining its core content. We start by looking at some key numbers.
+							With the data now organised into a more accessible format, we can begin examining its core content. We start by looking at some key numbers.
 						</p>
 						<div class="image" style="text-align: center;">
 							<h3 style="text-align: center;"><strong>Dataset summary</strong></h3>
@@ -118,7 +118,7 @@
 						<p>
 							It is important to acknowledge, however, that the dataset is not fully representative. A significant portion of the reviews comes from American users, meaning our analysis primarily caters to their preferences and tastes.
 							We decided not to rebalance the dataset, as doing so would have excluded many brews and reviews, that are still relevant to our analysis.
-    						Below is a visualization highlighting the 20 countries with the most reviews in our dataset.
+    						Below is a visualisation highlighting the 20 countries with the most reviews in our dataset.
 						</p>
 						<div class="flourish-embed flourish-hierarchy" data-src="visualisation/20776364"><h3 style="text-align: center;"><strong>Top countries by number of beer ratings</strong></h3><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20776364/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
 						<!-- TODO: How do we change "number of ratings" to "number of reviews"? -->
@@ -162,7 +162,7 @@
 						<!-- TODO: CHECK LINK AND CHECK THE # RATINGS ! -->
 						<h4><strong>First classification</strong></h4>
 						<p>
-							With the data cleaned, the first step in classifying beers as controversial or not involves analyzing
+							With the data cleaned, the first step in classifying beers as controversial or not involves analysing
 							the variances of each attribute. It may seem logical to use the variance of the overall grade, as it reflects a combination of each attribute.
 							However, setting a threshold for this variance presents challenges.
 							A <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/data/README.md" target="_blank">deeper analysis</a> revealed
@@ -207,7 +207,7 @@
 							<br>
 
 							With this new information, we attempted the Gaussian Mixture Model again, this time incorporating sentiment classifications.
-							Three models were constructed, each categorizes beers into three categories (Controversial, Universal and Neutral), but differs in the data used:
+							Three models were constructed, each categorises beers into three categories (Controversial, Universal and Neutral), but differs in the data used:
 							<ul>
 								<li><strong>Classifier 1</strong> uses all ratings, as before.</li>
 								<li><strong>Classifier 2</strong> uses only ratings having textual reviews, accounting for sentiment label.</li>
@@ -238,7 +238,7 @@
 
 							Alcohol By Volume (ABV) is a key attribute of beer, influencing its taste. 
 							We found, as expected, that extreme values of ABV are related to the controversilty of a beer. 
-							For the next part we choose to not plot the beers beyond 20% ABV as they are too few to be significant, 
+							For the next part we choose to not plot the beers beyond 20% ABV as there are too few to be significant, and caused fluctuations. 
 						</p>
 						<div class="image" style="text-align: center;">
 							<img src="images/abv.png" style="max-width: 100%; height: auto;"/>
@@ -246,9 +246,9 @@
 
 						----- VALENTIN
 						<p>
-							By analysing the evolution of the proportion of the classification of the beers per level of alcohol by volume we can extract two main points:
+							By analysing the evolution of the proportion of the classification of the beers per level of alcohol by volume we can extract that:
 							<ul>
-								<li>After a peak at around 5%, the more alcohol by volume the less beers there is.</li>
+								<li>After a peak at around 5%, the more alcohol by volume the less beers there are.</li>
 								<li>Most of the common beers (with an ABV between 2.5% and 7.5%) are neutral and some are controversial.</li>
 								<li>Beers with a low abv (<5%) tends to be controversial or neutral, beers with a very high abv (>15%) also tends to shows this behaviour.</li>
 								<li>Interestingly, the stronger beers (between 6% and 16%) are more likely to be universal or neutral.
@@ -288,7 +288,7 @@
 							We classified the user in three categories: novice, enthusiasts and connoisseurs. 
 							The more advanced an user is, the less there reviews are controversial and neutral. However, the proportion of universal ratings increase.
 							This is interesting as it may show an effect from other reviews, or on the other side, a bias of expertise as reviews from connoisseurs may be taken more seriously than beginners.
-							One could link this with a previous finding and hypothesize that the connoisseur are more subject to drink higher level of alcohol by volume beers, but this would need a study of this theory.
+							One could link this with a previous finding and hypothesise that the connoisseur are more subject to drink higher level of alcohol by volume beers, but this would need a study of this theory.
 						</p>
 						<div class="image" style="text-align: center;">
 							<img src="images/connoisseurs.png" style="max-width: 100%; height: auto;"/>
@@ -320,7 +320,7 @@
 						</p>
 						<p>
 							<h4><strong>Location of the brewery</strong></h4>
-							Similarly, we analyzed the origin of the beers themselves.
+							Similarly, we analysed the origin of the beers themselves.
 							The goal was to determine whether certain countries have a higher proportion of beers labeled as controversial, for instance.
 							we anticipated the percentages for each label category to lie around 37, 53 and 10% for the proportion of universal,
 							controversial and neutral beers. 
@@ -440,7 +440,7 @@
 							enabling us to have even more reliable results.
 						</p>
 						<p>
-							Another way to delve deeper into understanding why a beer might be controversial is by analyzing
+							Another way to delve deeper into understanding why a beer might be controversial is by analysing
 							qualitative reviews. While quantitative data analysis is already complex, the true insights behind
 							a 7/10 rating, for instance, lie within the qualitative feedback. By using various analysis methods detailed in
 							the <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/src/scripts/embeddings/README.md" target="_blank">GitHub</a>,
