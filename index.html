@@ -261,7 +261,19 @@
 									This would mean that the ratings of the users tends to converge on relatively strong beers.</li>
 							</ul>
 							<h4><strong>Number of ratings per beer</strong></h4>
-							It is important to also consider which user made the review, the severity and controversialy might differ between their first and their last review. We choose to <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/analysis_final.ipynb" target="_blank">classify</a> users into 3 categories, novice with less than 20 reviews, enthusiast with less than 800 reviews and connoisseur with more than 800 reviews.
+							We performed a similar analysis for the number of reviews per beer, showing that independently of the number of reviews, the distribution of the controversiality of the beers remains the same.
+							From our analysis the amount of rating is negligibly correlated with the increase or decrease between the proportion of the beers classification.
+							Furthermore the total amount of beer per rating is a heavy tail distribution. This lead us to believe that the number of rating impact on our analysis after the 
+							threshold we set is smaller.
+						</p>
+						<div class="image" style="text-align: center;">
+							<img src="images/number_of_ratings.png" style="max-width: 100%; height: auto;"/>
+						</div>
+						<p>
+							The study of the number of rating didn't prove as fruitful in gain of information. The number of beers slowly decreases with the number of ratings. Finally the universal and controversial beers proportion slightly increase, however those are two opposite clusters and does not make it more easy to find a trend.
+
+							<h4><strong>Level of the user</strong></h4>
+							It is important to also consider which user made the review, the severity and controversialy might differ between their first and their last review. We choose to users into 3 categories <a href="https://github.com/epfl-ada/ada-2024-project-abracadabra/blob/main/P3.ipynb" target="_blank">[4.4]</a>, novice with less than 20 reviews, enthusiast with less than 800 reviews and connoisseur with more than 800 reviews.
 						</p>
 						<div class="image" style="text-align: center;">
 							<img src="images/user_level.png" style="max-width: 100%; height: auto;"/>
@@ -269,14 +281,14 @@
 						<p>
 							We can conclude that the connoisseur tends to drink and rate more universal beers and the novice tends to rate more controversial beers. We can also try to state some hypothesis mainly that:
 							<ul>
-								<li>Connoisseur might know their taste better, as a result they might drink more beer that would cater to them.</li>
+								<li>Connoisseur might know their taste better, as a result they might drink more niche beers that would cater to them.</li>
 								<li>Novice might weight in more importance to a specific attribute, while connoisseur might take various into account. As a result, connoisseur ratings might be more fair and thus closer to the mean</li>
-								<li>The higher proportion of universal in the connoisseur might be due to the <a href=https://dlab.epfl.ch/people/west/pub/Lederrey-West_WWW-18.pdf>herding effect</a>)</li>. If the first few ratings are made by connoisseur, then the novice users might copy their opinions.
+								<li>The higher proportion of universal in the connoisseur might be due to the <a href=https://dlab.epfl.ch/people/west/pub/Lederrey-West_WWW-18.pdf>herding effect</a>. If the first few ratings are made by connoisseur, then the novice users might copy their opinions.</li>
 						</p>
 						<p>
 							<h4><strong>Country of the users</strong></h4>
-							With approximately half of the reviews originating from the U.S.A., the following maps illustrates the frequency of labels (neutral, universal or controversial) assigned per country by the user from those respective regions.
-							It is important to consider that some countries are less represented than others, particularly those where alcohol consumption is not a cultural norm, leading to a very low number of reviews.
+							The following maps illustrates the proportion of labels (neutral, universal or controversial) assigned depending on the users country of origin
+							It is important to consider that some countries are less represented than others, particularly those where alcohol consumption is not a cultural norm, leading to a very low number of reviews. On the contrary, the USA still represents more than 50% of the reviews.
 							<br>
 							<br>
 
@@ -300,9 +312,7 @@
 						<p>
 							<h4><strong>Location of the brewery</strong></h4>
 							Similarly, we analysed the origin of the beers themselves.
-							The goal was to determine whether certain countries have a higher proportion of beers labeled as controversial, for instance.
-							we anticipated the percentages for each label category to lie around 37, 53 and 10% for the proportion of universal,
-							controversial and neutral beers. 
+							We anticipate the proportion of each category for each country to be similar to the overall division,.
 							<br>
 							<br>
 							<div class="image-box">
