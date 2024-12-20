@@ -76,8 +76,8 @@
 						<h2>Research questions</h2>
 						<p>The following key questions define how this study is structured and what are the main topic that we will explore.</p>						
 						<ul class="default" style="margin-left: 50px;">
-							<li><li>How can we define controversiality and classify beers based on that ? Which numerical graded attributes are most associated with beers perceived as controversial? Can we use the textual review to enhance our classification ?</li>
-							<li>Are there features explaining this classification? Are the feature dependant on the beer itself? </li>
+							<li>How can we define and classify beer controversiality, and which numerical attributes best predict it? Can we use the textual review to enhance our classification?</li>
+							<li>Are there features explaining controversiality, and do they depend on the beer itself? </li>
 							------------------------------------------------------------------------------------------------------------
 							<li>How can we define controversiality and can we distinguish these two classes effectively?</li>
 							<br>
@@ -174,11 +174,11 @@
 						<h4><strong>Clustering</strong></h4>
 
 						<p>
-							Recognising the limitations of a one-dimensional approach, we turned to a clustering method.
-							We chose to use a Gaussian Mixture Model (GMM), factoring in the variances of all five attributes to group together beers.
+							Recognising the limitations of a one-dimensional approach, we turned to a clustering method, only using the grades, and keeping the text for later.
+							We chose to use a Gaussian Mixture Model (GMM), factoring in the variances of all five attributes, to group together beers.
 							<br>
 							<br>
-							Using the elbow method on the negative log-likelihood plot, we determined three clusters to be optimal.
+							Using the elbow method on the negative log-likelihood plot, we determined <strong>3</strong> clusters to be optimal.
 						</p>
 						<div class="image" style="text-align: center;">
 							<img src="images/gmm_label.png" style="max-width: 100%; height: auto;"/>
@@ -187,7 +187,7 @@
 							<br>
 							The clusters were computed using standardised variances. 
 							They serve as our key metric for controversiality: High variance indicates controversy or disagreement, while low variance suggests a universal appeal.
-							The plot shows scaled variances, where smaller values (near 0) represent low variance, and larger values indicate high variance. 
+							The plot shows scaled variances, where smaller values (near 0) represent low variance, and larger values indicate high variance. For each subplot, the variance is represented by the distance from the origin of a point.
 							Based on this, we define the clusters as follows:
 						</p>
 						<ul>
@@ -210,9 +210,9 @@
 							With this new information, we attempted the Gaussian Mixture Model again, this time incorporating sentiment classifications.
 							Three models were constructed, each categorizes beers into three categories (Controversial, Universal and Neutral), but differs in the data used:
 							<ul>
-								<li><strong>Model 1</strong> is computed for all ratings.</li>
-								<li><strong>Model 2</strong> is computed only for ratings with text with sentiment label.</li>
-								<li><strong>Model 3</strong> is computed only for ratings with text without sentiment labels.</li>
+								<li><strong>Model 1</strong> is computed for all ratings, computed before.</li>
+								<li><strong>Model 2</strong> is computed only for ratings with text, accounting for sentiment label.</li>
+								<li><strong>Model 3</strong> is computed only for ratings with text, not accounting for sentiment label.</li>
 							</ul>
 						</p>
 						<div class="image" style="text-align: center;">
